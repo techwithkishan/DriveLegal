@@ -12,6 +12,8 @@
 ## 🌟 Overview
 **DRIVELEGAL** is a full-stack, state-of-the-art AI-powered Traffic Compliance & Challan Intelligence System designed to bridge the gap between complex legal traffic regulations and everyday citizens. 
 
+🖥️ **Live Web Application:** [https://drive-legal-seven.vercel.app](https://drive-legal-seven.vercel.app)
+
 Traffic violation laws and challan management remain fragmented, opaque, and confusing. DRIVELEGAL empowers vehicle owners with **real-time AI legal explanations, localized language interfaces, active document audits, cross-border rule warnings, and interactive simulation tools** while providing traffic authorities with comprehensive governance analytics.
 
 ---
@@ -112,7 +114,7 @@ npm install
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser to experience the application!
+Open the local address [http://localhost:5173](http://localhost:5173) in your browser or explore the live production deployment at [https://drive-legal-seven.vercel.app](https://drive-legal-seven.vercel.app) to experience the application!
 
 ### **3. Production Build**
 ```bash
