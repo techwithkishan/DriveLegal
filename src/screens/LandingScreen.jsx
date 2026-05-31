@@ -24,6 +24,7 @@ export default function LandingScreen() {
   const [showStateDropdown, setShowStateDropdown] = useState(false);
   const [demoVehicle, setDemoVehicle] = useState('Two-Wheeler');
   const [selectedViolations, setSelectedViolations] = useState(['helmet']); // Default pre-select helmet
+  const [activeFooterTab, setActiveFooterTab] = useState(null);
 
   // Tracks navbar shrink on scroll past hero
   useEffect(() => {
@@ -1040,10 +1041,10 @@ export default function LandingScreen() {
           <div className="space-y-3">
             <strong className="text-slate-800 dark:text-white block text-[9px] tracking-widest font-black">Company</strong>
             <div className="flex flex-col gap-2 font-bold text-slate-500 dark:text-slate-450 text-[9px]">
-              <a href="#" className="hover:text-slate-800 dark:hover:text-white transition-all">About</a>
-              <a href="#" className="hover:text-slate-800 dark:hover:text-white transition-all">Privacy Policy</a>
-              <a href="#" className="hover:text-slate-800 dark:hover:text-white transition-all">Terms of Use</a>
-              <a href="#" className="hover:text-slate-800 dark:hover:text-white transition-all">Contact Support</a>
+              <button onClick={(e) => { e.preventDefault(); setActiveFooterTab('about'); }} className="text-left hover:text-slate-800 dark:hover:text-white transition-all">About</button>
+              <button onClick={(e) => { e.preventDefault(); setActiveFooterTab('privacy'); }} className="text-left hover:text-slate-800 dark:hover:text-white transition-all">Privacy Policy</button>
+              <button onClick={(e) => { e.preventDefault(); setActiveFooterTab('terms'); }} className="text-left hover:text-slate-800 dark:hover:text-white transition-all">Terms of Use</button>
+              <button onClick={(e) => { e.preventDefault(); setActiveFooterTab('support'); }} className="text-left hover:text-slate-800 dark:hover:text-white transition-all">Contact Support</button>
             </div>
           </div>
 
@@ -1061,6 +1062,160 @@ export default function LandingScreen() {
         <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50 bg-slate-900 border border-slate-700 text-white font-bold text-xs py-3 px-6 rounded-2xl shadow-xl flex items-center gap-2 animate-fade-in">
           <Check className="w-4 h-4 text-electric-glow animate-bounce" />
           <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* PREMIUM INTERACTIVE FOOTER INFORMATION MODAL */}
+      {activeFooterTab && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="glass-modal max-w-lg w-full p-6 border border-slate-200 dark:border-white/10 shadow-2xl relative animate-fade-in space-y-4 max-h-[85vh] overflow-y-auto scrollbar-none text-left bg-white/95 dark:bg-navy-950/95 text-slate-850 dark:text-slate-100 rounded-3xl">
+            {/* Header */}
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-white/15">
+              <span className="font-heading font-extrabold text-sm tracking-wider uppercase text-slate-900 dark:text-white flex items-center gap-2">
+                {activeFooterTab === 'about' && 'About DRIVELEGAL'}
+                {activeFooterTab === 'privacy' && 'Privacy Policy'}
+                {activeFooterTab === 'terms' && 'Terms of Use'}
+                {activeFooterTab === 'support' && 'Contact Support'}
+              </span>
+              <button 
+                onClick={() => setActiveFooterTab(null)}
+                className="p-1.5 rounded-lg hover:bg-slate-150 dark:hover:bg-white/15 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white transition-all focus:outline-none"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="space-y-4 text-xs leading-relaxed font-semibold text-slate-650 dark:text-slate-300">
+              {activeFooterTab === 'about' && (
+                <div className="space-y-4 text-left">
+                  <div className="p-4 bg-electric/5 border border-electric/15 rounded-2xl">
+                    <p className="text-slate-850 dark:text-white font-bold text-sm">DRIVELEGAL</p>
+                    <p className="mt-1 font-semibold leading-relaxed">
+                      DRIVELEGAL is an AI-powered traffic compliance platform built for Indian drivers and traffic authorities.
+                    </p>
+                  </div>
+                  <p>
+                    Founded with a mission to make traffic laws accessible, understandable, and actionable for every citizen.
+                  </p>
+                  <div className="border-t border-slate-200/50 dark:border-white/10 pt-4 space-y-2">
+                    <p className="text-[9px] text-slate-450 dark:text-slate-500 uppercase tracking-widest font-black">Hackathon Context</p>
+                    <div className="p-4 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-2xl space-y-2 text-[11px]">
+                      <p>🏆 <strong className="text-slate-850 dark:text-white">Road Safety Hackathon (IITM) 2026</strong></p>
+                      <p>👥 <strong className="text-slate-850 dark:text-white">Team:</strong> Team Achievers</p>
+                      
+                      {/* Institution with map link */}
+                      <div className="space-y-1.5 pt-1">
+                        <p className="flex items-start gap-1">
+                          <span>🏫</span>
+                          <span>
+                            <strong className="text-slate-850 dark:text-white">Institution:</strong>{' '}
+                            <a 
+                              href="https://maps.google.com/?q=Baderia+Global+Institute+of+Engineering+and+Management+Jabalpur" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-electric hover:text-electric-glow font-bold hover:underline"
+                              title="Open in Google Maps"
+                            >
+                              Baderia Global Institute of Engineering and Management, Jabalpur
+                              <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                            </a>
+                          </span>
+                        </p>
+                        <div className="pl-5">
+                          <a 
+                            href="https://maps.google.com/?q=Baderia+Global+Institute+of+Engineering+and+Management+Jabalpur" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 bg-electric/10 hover:bg-electric/25 text-electric text-[9px] font-black uppercase px-3 py-1.5 rounded-xl transition-all shadow-sm"
+                          >
+                            <MapPin className="w-3 h-3 text-current" />
+                            <span>View on Maps</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-center font-heading font-black text-xs italic text-electric tracking-wide pt-2">
+                    "Know Your Rights. Own The Road."
+                  </p>
+                </div>
+              )}
+
+              {activeFooterTab === 'privacy' && (
+                <div className="space-y-4 text-left">
+                  <div className="p-4 bg-emerald-500/5 border border-emerald-500/15 rounded-2xl">
+                    <p className="text-emerald-700 dark:text-emerald-400 font-bold text-sm">🔒 Your Privacy is Our Priority</p>
+                    <p className="mt-1">
+                      We are committed to absolute transparency. Here's a brief overview of how your data is handled:
+                    </p>
+                  </div>
+                  <ul className="space-y-2.5 list-disc list-inside bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
+                    <li><strong>We collect:</strong> phone number, vehicle number, licence number</li>
+                    <li><strong>We do NOT sell user data</strong></li>
+                    <li><strong>Challan history stored locally</strong> (localStorage in demo)</li>
+                    <li><strong>Firebase Auth handles OTP securely</strong></li>
+                    <li><strong>No third-party ad tracking</strong></li>
+                    <li><strong>Data deletion available on request</strong></li>
+                  </ul>
+                  <div className="flex items-center justify-between text-[11px] font-bold mt-2 pt-2 border-t border-slate-200/50 dark:border-white/10">
+                    <span>Contact:</span>
+                    <a href="mailto:lucky114005@gmail.com" className="text-electric hover:underline font-black">lucky114005@gmail.com</a>
+                  </div>
+                </div>
+              )}
+
+              {activeFooterTab === 'terms' && (
+                <div className="space-y-4 text-left">
+                  <div className="p-4 bg-amber-500/5 border border-amber-500/15 rounded-2xl">
+                    <p className="text-amber-700 dark:text-amber-400 font-bold text-sm">⚠️ Terms of Use Guidelines</p>
+                    <p className="mt-1">
+                      Please review the following baseline agreements regarding app usage:
+                    </p>
+                  </div>
+                  <ul className="space-y-2.5 list-disc list-inside bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
+                    <li>DRIVELEGAL is for <strong>awareness and educational purposes only</strong></li>
+                    <li><strong>Not an official government service</strong></li>
+                    <li><strong>Not affiliated</strong> with Parivahan, MoRTH, or any government body</li>
+                    <li>Challan data shown is for reference</li>
+                    <li>Fine amounts based on **MV Act 2019**</li>
+                    <li>Always verify with official sources</li>
+                    <li><strong>Not liable</strong> for legal decisions made based on app information</li>
+                  </ul>
+                </div>
+              )}
+
+              {activeFooterTab === 'support' && (
+                <div className="space-y-4 text-left">
+                  <div className="p-4 bg-indigo-500/5 border border-indigo-500/15 rounded-2xl">
+                    <p className="text-indigo-700 dark:text-indigo-400 font-bold text-sm">💬 Contact Support Channel</p>
+                    <p className="mt-1">
+                      Reach out to us directly through the official communication pathways below:
+                    </p>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-3">
+                    <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
+                      <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">General Support</span>
+                      <p className="text-slate-850 dark:text-white font-bold">Email: support@drivelegal.in</p>
+                      <p>Phone: +91 XXXXX XXXXX</p>
+                      <p className="text-[8.5px] text-electric font-bold mt-1">Response time: Within 24 hours</p>
+                    </div>
+                    <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
+                      <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">Partnerships</span>
+                      <p className="text-slate-855 dark:text-white font-bold">partnerships@drivelegal.in</p>
+                      <p className="text-[8.5px] text-slate-450 mt-1">For Authority/Government inquiries</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 text-center">
+                    <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400 mb-1">Press & Media</span>
+                    <p className="text-slate-850 dark:text-white font-bold">media@drivelegal.in</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       )}
 
