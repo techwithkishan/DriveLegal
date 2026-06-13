@@ -4,10 +4,16 @@ import {
   Map, Eye, X, Filter, Navigation, Info
 } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
+<<<<<<< HEAD
 import LocationChip from '../components/LocationChip';
 
 export default function ZoneAlertsScreen() {
   const { setActiveScreen, location, locationLoading } = useAppState();
+=======
+
+export default function ZoneAlertsScreen() {
+  const { setActiveScreen } = useAppState();
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   const [filter, setFilter] = useState('All');
   const [selectedZone, setSelectedZone] = useState(null);
   const [showMapModal, setShowMapModal] = useState(false);
@@ -112,7 +118,11 @@ export default function ZoneAlertsScreen() {
     <div className="flex-1 flex flex-col p-4 pb-24 max-w-md mx-auto relative overflow-hidden">
       
       {/* Header */}
+<<<<<<< HEAD
       <div className="flex items-center justify-between mb-3">
+=======
+      <div className="flex items-center justify-between mb-4">
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setActiveScreen('dashboard')}
@@ -138,9 +148,12 @@ export default function ZoneAlertsScreen() {
         </button>
       </div>
 
+<<<<<<< HEAD
       {/* Live Location Chip */}
       <LocationChip className="mb-1" />
 
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       {/* Filter Row */}
       <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-2 scrollbar-none">
         <Filter className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 shrink-0" />
@@ -227,11 +240,15 @@ export default function ZoneAlertsScreen() {
                   {selectedZone ? 'Enforcement Location' : 'All Enforcement Zones'}
                 </span>
                 <h4 className="text-xs text-slate-500 dark:text-slate-400 font-bold truncate max-w-[240px]">
+<<<<<<< HEAD
                   {selectedZone ? selectedZone.name : (
                     locationLoading ? 'Detecting your area…' :
                     location.city ? `${location.city} Area` :
                     'Your Area'
                   )}
+=======
+                  {selectedZone ? selectedZone.name : 'Bengaluru Metropolitan Area'}
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                 </h4>
               </div>
               <button 
@@ -306,7 +323,11 @@ export default function ZoneAlertsScreen() {
               <div className="relative z-10 m-2 p-2 rounded-xl bg-slate-950/80 backdrop-blur border border-slate-800 flex items-center justify-between text-[9px] text-slate-400">
                 <span className="flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-electric-glow animate-pulse" />
+<<<<<<< HEAD
                   <span>GPS Synced: {locationLoading ? 'Detecting…' : (location.city || 'Unknown')} Area</span>
+=======
+                  <span>GPS Synced: Bengaluru Area</span>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                 </span>
                 <span className="font-mono text-emerald-400 font-extrabold uppercase">Live Radar Active</span>
               </div>

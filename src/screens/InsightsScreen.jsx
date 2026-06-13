@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useState, useEffect } from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { 
   Bot, Scale, Award, TrendingUp, Sparkles, 
   HelpCircle, ChevronRight, BrainCircuit, RefreshCw, AlertCircle,
@@ -16,9 +20,15 @@ export default function InsightsScreen() {
 
   // Streak counter from localStorage or default to 14 days
   const [streakDays, setStreakDays] = useState(() => {
+<<<<<<< HEAD
     const saved = localStorage.getItem('DriVos_streak');
     if (!saved) {
       localStorage.setItem('DriVos_streak', '14');
+=======
+    const saved = localStorage.getItem('drivelegal_streak');
+    if (!saved) {
+      localStorage.setItem('drivelegal_streak', '14');
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       return 14;
     }
     return parseInt(saved, 10);
@@ -263,7 +273,11 @@ export default function InsightsScreen() {
             onClick={() => {
               const next = streakDays < 30 ? streakDays + 1 : 14;
               setStreakDays(next);
+<<<<<<< HEAD
               localStorage.setItem('DriVos_streak', next.toString());
+=======
+              localStorage.setItem('drivelegal_streak', next.toString());
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
             }}
             className="text-electric hover:text-electric-glow transition-all uppercase tracking-wider text-[8px] font-extrabold border border-electric/25 px-2 py-0.5 rounded"
           >
@@ -285,7 +299,11 @@ export default function InsightsScreen() {
             Driving Intelligence
           </h2>
           <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
+<<<<<<< HEAD
             Powered by DriVos AI
+=======
+            Powered by DRIVELEGAL AI
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           </p>
         </div>
         <div className="bg-gradient-to-tr from-indigo-500 to-electric p-2 rounded-xl text-white shadow-lg glow-electric">

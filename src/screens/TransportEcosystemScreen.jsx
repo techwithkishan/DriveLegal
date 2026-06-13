@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useState } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { Car, Truck, Anchor, Plane, Train, Lock, Sparkles, CheckCircle2, ChevronRight, ArrowRight, Shield } from 'lucide-react';
 import { useGlobalContext } from '../context/GlobalContext';
 import { useAppState } from '../context/AppStateContext';
@@ -87,7 +91,11 @@ export default function TransportEcosystemScreen() {
           Transport Ecosystem
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-md mx-auto">
+<<<<<<< HEAD
           DriVos's core penalty intelligence layer scales to secure compliance across all major fields of transport.
+=======
+          DRIVELEGAL's core penalty intelligence layer scales to secure compliance across all major fields of transport.
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
         </p>
       </div>
 
@@ -160,7 +168,11 @@ export default function TransportEcosystemScreen() {
             <div className="flex items-center justify-between text-[7px] font-black uppercase text-slate-450 dark:text-slate-500 bg-slate-100 dark:bg-slate-950 p-2 rounded-xl border border-slate-200 dark:border-white/5">
               <span className="flex items-center gap-1">
                 <Sparkles className="w-2.5 h-2.5 text-electric-glow animate-pulse" />
+<<<<<<< HEAD
                 DriVos AI ENGINE
+=======
+                DRIVELEGAL AI ENGINE
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               </span>
               <span>•</span>
               <span>📍 {flag} {region || 'Global'}</span>
@@ -205,7 +217,11 @@ export default function TransportEcosystemScreen() {
               </div>
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-electric shrink-0 mt-0.5" />
+<<<<<<< HEAD
                 <span>**Unified Context Layer:** The same proprietary DriVos AI technology powers all transport dimensions.</span>
+=======
+                <span>**Unified Context Layer:** The same proprietary DRIVELEGAL AI technology powers all transport dimensions.</span>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               </div>
             </div>
 

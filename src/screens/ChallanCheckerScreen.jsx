@@ -2,14 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { 
   MapPin, ChevronRight, CheckCircle2, Info, AlertTriangle, 
   HelpCircle, ChevronDown, Award, Calendar, BookOpen, HeartPulse, 
+<<<<<<< HEAD
   Car, Shield, FileText, Scale, RefreshCw
+=======
+  Car, Shield, FileText, Scale
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
 import { FINE_DATABASE, AI_TEACHING_BLOCKS, LOCATION_CASCADES } from '../data/demoData';
 import { useGlobalContext } from '../context/GlobalContext';
 import violationsGlobal from '../data/violations-global.json';
 import exchangeRates from '../data/exchangeRates.json';
+<<<<<<< HEAD
 import LocationChip from '../components/LocationChip';
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 
 // Dynamic count-up numerical currency conversion strip for Step 4
 function CurrencyConversionStrip({ amountInCurrentCurrency, currentCountry }) {
@@ -74,7 +81,11 @@ function CurrencyConversionStrip({ amountInCurrentCurrency, currentCountry }) {
 }
 
 export default function ChallanCheckerScreen() {
+<<<<<<< HEAD
   const { location, setLocation, isOffline, isTravelActive, getTravelRules, user, setActiveScreen, detectLocation, locationLoading, locationError } = useAppState();
+=======
+  const { location, setLocation, isOffline, isTravelActive, getTravelRules, user, setActiveScreen } = useAppState();
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   const { country, currencySymbol, activeCountryConfig } = useGlobalContext();
 
   // Wizard Steps: 1 = Location, 2 = Vehicle Type, 3 = Violations, 4 = Breakdown
@@ -150,12 +161,28 @@ export default function ChallanCheckerScreen() {
     setStep(2);
   };
 
+<<<<<<< HEAD
   // Real auto detect using browser Geolocation + Nominatim
   const handleAutoDetect = () => {
     detectLocation();
     // After detection, auto-advance to step 2 once location loads
     // We watch locationLoading in the UI to show feedback
     // Step advances happen via the button below
+=======
+  // Mock auto detect location
+  const handleAutoDetect = () => {
+    setLocation({
+      country: "India",
+      state: "Karnataka",
+      city: "Bengaluru",
+      area: "MG Road",
+      isAutoDetected: true
+    });
+    setSelectedState("Karnataka");
+    setSelectedCity("Bengaluru");
+    setSelectedArea("MG Road");
+    setStep(2);
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   };
 
   // Toggle violation selection
@@ -285,6 +312,7 @@ export default function ChallanCheckerScreen() {
           <div className="grid grid-cols-2 gap-3">
             <button
               onClick={handleAutoDetect}
+<<<<<<< HEAD
               disabled={locationLoading}
               className={`py-3 px-4 rounded-xl border text-white font-bold text-xs uppercase tracking-wider flex flex-col items-center justify-center gap-2 transition-all ${
                 locationLoading
@@ -298,6 +326,13 @@ export default function ChallanCheckerScreen() {
                 : <MapPin className="w-5 h-5 text-electric animate-bounce" />
               }
               <span className="text-slate-700 dark:text-slate-200">{locationLoading ? 'Detecting GPS…' : 'Auto Detect'}</span>
+=======
+              className="py-3 px-4 rounded-xl bg-gradient-to-tr from-electric/25 to-blue-600/10 border border-electric/40 text-white font-bold text-xs uppercase tracking-wider flex flex-col items-center justify-center gap-2 hover:bg-electric/20 transition-all glow-electric"
+              id="auto-detect-loc-btn"
+            >
+              <MapPin className="w-5 h-5 text-electric animate-bounce" />
+              <span>Auto Detect</span>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
             </button>
 
             <button
@@ -313,6 +348,7 @@ export default function ChallanCheckerScreen() {
             </button>
           </div>
 
+<<<<<<< HEAD
           {/* Show detected location feedback */}
           {location.isAutoDetected && !locationLoading && !locationError && (
             <div className="bg-electric/5 border border-electric/20 rounded-xl p-2.5 flex items-center justify-between">
@@ -337,6 +373,8 @@ export default function ChallanCheckerScreen() {
             </div>
           )}
 
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           <div className="h-[1px] bg-slate-200 dark:bg-white/5 my-2" />
 
           {/* Cascading dropdown selectors */}

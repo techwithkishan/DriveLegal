@@ -62,7 +62,11 @@ export default function HistoryScreen() {
   });
 
   return (
+<<<<<<< HEAD
     <div className="flex-1 flex flex-col p-4 pb-24 space-y-4 max-w-md mx-auto relative select-none">
+=======
+    <div className="flex-1 flex flex-col p-4 pb-32 space-y-4 max-w-md mx-auto relative select-none">
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       {/* Header and Filter Icon */}
       <div className="flex items-center justify-between py-1">
         <div className="space-y-0.5">
@@ -126,11 +130,16 @@ export default function HistoryScreen() {
           placeholder="Search by date, violation, or fine amount..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+<<<<<<< HEAD
           className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-650 focus:border-electric focus:ring-1 focus:ring-electric focus:outline-none transition-all font-semibold"
+=======
+          className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 pl-10 pr-4 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:border-electric focus:ring-1 focus:ring-electric focus:outline-none transition-all font-semibold"
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           id="history-search-input"
         />
       </div>
 
+<<<<<<< HEAD
       {/* Challan Summary Panel - inline style to prevent overlapping floating elements */}
       <div className="w-full" id="history-summary-stats-panel">
         <div className="bg-slate-100/50 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 rounded-2xl py-3.5 px-4 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-350">
@@ -153,6 +162,8 @@ export default function HistoryScreen() {
         </div>
       </div>
 
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       {/* Offline Alert Strip inside History */}
       {isOffline && (
         <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-2.5 rounded-xl flex items-center gap-2 text-[10px] font-medium leading-relaxed">
@@ -296,6 +307,31 @@ export default function HistoryScreen() {
           })
         )}
       </div>
+<<<<<<< HEAD
+=======
+
+      {/* STICKY BOTTOM SUMMARY PANEL */}
+      <div className="fixed bottom-20 left-0 right-0 z-30 px-4 max-w-md mx-auto">
+        <div className="bg-white/95 dark:bg-slate-900/90 border border-slate-200 dark:border-white/10 backdrop-blur-md rounded-2xl py-3 px-4 shadow-2xl flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+          <div className="flex flex-col text-center items-center flex-1">
+            <span className="text-slate-500 dark:text-slate-400 text-[8px] font-semibold mb-0.5">Total Fines</span>
+            <span className="text-slate-800 dark:text-white text-xs font-mono font-bold tabular-nums">₹{stats.totalFines.toLocaleString('en-IN')}</span>
+          </div>
+          <div className="w-[1px] h-6 bg-slate-200 dark:bg-white/5" />
+          
+          <div className="flex flex-col text-center items-center flex-1">
+            <span className="text-emerald-600 dark:text-emerald-500/80 text-[8px] font-semibold mb-0.5">Paid</span>
+            <span className="text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tabular-nums">₹{stats.paidFines.toLocaleString('en-IN')}</span>
+          </div>
+          <div className="w-[1px] h-6 bg-slate-200 dark:bg-white/5" />
+          
+          <div className="flex flex-col text-center items-center flex-1">
+            <span className="text-amber-600 dark:text-amber-500/80 text-[8px] font-semibold mb-0.5">Pending</span>
+            <span className="text-amber-600 dark:text-amber-400 text-xs font-mono font-bold tabular-nums">₹{stats.pendingFines.toLocaleString('en-IN')}</span>
+          </div>
+        </div>
+      </div>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
     </div>
   );
 }

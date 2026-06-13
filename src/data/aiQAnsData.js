@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// Automatically converted from DriVos_AIQAns.xlsx
+=======
+// Automatically converted from Drivelegal_AIQAns.xlsx
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 
 export const AI_QA_DATABASE = [
   {

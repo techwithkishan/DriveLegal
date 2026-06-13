@@ -6,13 +6,20 @@ import {
 } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
 import { useGlobalContext } from '../context/GlobalContext';
+<<<<<<< HEAD
 import LocationChip from '../components/LocationChip';
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 
 export default function DashboardScreen() {
   const { 
     user, vehicles, addCustomVehicle, removeCustomVehicle, 
     isTravelActive, getTravelRules, activeScreen, 
+<<<<<<< HEAD
     setActiveScreen, isOffline, location,
+=======
+    setActiveScreen, isOffline, setLocation, location,
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
     safetyScore, getChallanSummaryStats, challans
   } = useAppState();
 
@@ -21,7 +28,11 @@ export default function DashboardScreen() {
 
   // Guided Onboarding Tour State
   const [showTourPrompt, setShowTourPrompt] = useState(() => {
+<<<<<<< HEAD
     return localStorage.getItem('DriVos_tour_completed') !== 'true';
+=======
+    return localStorage.getItem('drivelegal_tour_completed') !== 'true';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   });
   const [tourActive, setTourActive] = useState(false);
   const [tourStep, setTourStep] = useState(1);
@@ -175,7 +186,14 @@ export default function DashboardScreen() {
             <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-red-500 border-2 border-white dark:border-navy" />
           </button>
           
+<<<<<<< HEAD
           <LocationChip compact className="shrink-0" />
+=======
+          <div className="bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-3 py-1.5 flex items-center gap-1.5 text-[10px] font-extrabold text-slate-700 dark:text-slate-350 tracking-wider">
+            <MapPin className="w-4 h-4 text-electric-glow animate-pulse" />
+            <span>{location.city.toUpperCase()}, {location.state.substring(0, 2).toUpperCase()}</span>
+          </div>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 
           {/* PREMIUM CONSTITUTIONAL INDIAN LANGUAGE DROPDOWN SELECTOR */}
           <div className="relative shrink-0 select-none">
@@ -740,7 +758,11 @@ export default function DashboardScreen() {
               <button 
                 onClick={() => {
                   setShowTourPrompt(false);
+<<<<<<< HEAD
                   localStorage.setItem('DriVos_tour_completed', 'true');
+=======
+                  localStorage.setItem('drivelegal_tour_completed', 'true');
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                 }}
                 className="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-white/5 transition-all"
               >
@@ -770,7 +792,11 @@ export default function DashboardScreen() {
               <button
                 onClick={() => {
                   setShowTourPrompt(false);
+<<<<<<< HEAD
                   localStorage.setItem('DriVos_tour_completed', 'true');
+=======
+                  localStorage.setItem('drivelegal_tour_completed', 'true');
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                 }}
                 className="flex-1 bg-slate-100 dark:bg-white/5 border border-slate-250 dark:border-white/10 text-slate-550 dark:text-slate-400 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all hover:bg-slate-200 dark:hover:bg-white/10"
               >
@@ -788,7 +814,11 @@ export default function DashboardScreen() {
             
             {/* Step Progress indicator */}
             <div className="flex justify-between items-center text-[8.5px] font-black uppercase tracking-widest text-amber-600 dark:text-amber-400">
+<<<<<<< HEAD
               <span>{TOUR_STEPS[tourStep - 1]?.title || 'DriVos Onboarding'}</span>
+=======
+              <span>{TOUR_STEPS[tourStep - 1]?.title || 'DRIVELEGAL Onboarding'}</span>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               <span>Step {tourStep} of {TOUR_STEPS.length}</span>
             </div>
             
@@ -809,7 +839,11 @@ export default function DashboardScreen() {
               <button
                 onClick={() => {
                   setTourActive(false);
+<<<<<<< HEAD
                   localStorage.setItem('DriVos_tour_completed', 'true');
+=======
+                  localStorage.setItem('drivelegal_tour_completed', 'true');
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                 }}
                 className="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white transition-all focus:outline-none"
               >
@@ -837,7 +871,11 @@ export default function DashboardScreen() {
                   <button
                     onClick={() => {
                       setTourActive(false);
+<<<<<<< HEAD
                       localStorage.setItem('DriVos_tour_completed', 'true');
+=======
+                      localStorage.setItem('drivelegal_tour_completed', 'true');
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
                       
                       // Trigger dynamic confetti burst animation!
                       const burst = document.createElement('div');

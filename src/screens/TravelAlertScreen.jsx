@@ -4,10 +4,16 @@ import {
   MapPin, ShieldAlert, Info, Scale, ArrowRight, CheckCircle
 } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
+<<<<<<< HEAD
 import LocationChip from '../components/LocationChip';
 
 export default function TravelAlertScreen() {
   const { setActiveScreen, location, locationLoading } = useAppState();
+=======
+
+export default function TravelAlertScreen() {
+  const { setActiveScreen, location } = useAppState();
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 
   // Slide down banner state
   const [showBanner, setShowBanner] = useState(false);
@@ -74,7 +80,11 @@ export default function TravelAlertScreen() {
                 YOU'VE ENTERED GOA!
               </h4>
               <p className="text-[11px] text-cyan-50/90 leading-relaxed mt-1.5 font-medium">
+<<<<<<< HEAD
                 DriVos has auto-detected your entry into Goa. We've compiled the region-specific checklist and strict compliance differences for you below!
+=======
+                DriveLegal has auto-detected your entry into Goa. We've compiled the region-specific checklist and strict compliance differences for you below!
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               </p>
             </div>
             <button 
@@ -106,9 +116,12 @@ export default function TravelAlertScreen() {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/* Live Location Chip */}
       <LocationChip className="mb-4" />
 
+=======
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       {/* Comparison Rules Table */}
       <div className="glass-panel p-4 space-y-3 mb-4">
         <div className="flex items-center gap-2">

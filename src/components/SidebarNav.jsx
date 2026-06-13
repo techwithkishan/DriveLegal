@@ -31,7 +31,11 @@ export default function SidebarNav() {
     { id: 'ai', label: 'AI Legal Chat', icon: Bot },
     { id: 'awareness', label: 'Awareness Hub', icon: BookOpen },
     { id: 'scenario', label: 'Scenario Simulator', icon: Sparkles },
+<<<<<<< HEAD
     { id: 'about', label: 'About DriVos', icon: Info },
+=======
+    { id: 'about', label: 'About DriveLegal', icon: Info },
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
     { id: 'profile', label: 'My Profile', icon: User },
     { id: 'pricing', label: 'Upgrade & Pricing', icon: CreditCard },
   ];
@@ -62,17 +66,30 @@ export default function SidebarNav() {
           onClick={() => setActiveScreen(isAdminMode ? 'adminDashboard' : 'dashboard')}
           className="flex items-center gap-3 cursor-pointer group"
         >
+<<<<<<< HEAD
           <div className={`rounded-xl overflow-hidden text-white shadow-lg transition-all w-10 h-10 shrink-0 ${
             isAdminMode 
               ? 'shadow-amber-500/20 group-hover:scale-105' 
               : 'shadow-electric/20 group-hover:scale-105'
           }`}>
             <img src="/drivos-logo.jpg" alt="DriVos Logo" className="w-full h-full object-cover" />
+=======
+          <div className={`p-2.5 rounded-xl text-white shadow-lg transition-all ${
+            isAdminMode 
+              ? 'bg-gradient-to-tr from-amber-500 to-orange-600 shadow-amber-500/20 group-hover:scale-105' 
+              : 'bg-gradient-to-tr from-electric to-blue-600 shadow-electric/20 group-hover:scale-105'
+          }`}>
+            <Shield className="w-5 h-5 fill-white/10" />
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           </div>
           {!collapsed && (
             <div className="space-y-0.5 animate-fade-in">
               <span className="font-heading font-black text-sm tracking-wider bg-gradient-to-r from-slate-900 dark:from-white to-electric bg-clip-text text-transparent uppercase leading-none block">
+<<<<<<< HEAD
                 DriVos
+=======
+                DRIVELEGAL
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               </span>
               <span className="text-[7.5px] text-slate-400 font-extrabold uppercase tracking-widest block leading-none">
                 Compliance AI

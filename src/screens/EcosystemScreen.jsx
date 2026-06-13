@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useState } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { useAppState } from '../context/AppStateContext';
 import { Globe, X, ArrowRight, Info } from 'lucide-react';
 
@@ -6,7 +10,11 @@ const NODES = {
   core: {
     id: 'core',
     emoji: '🛡️',
+<<<<<<< HEAD
     label: 'DriVos\nCore Engine',
+=======
+    label: 'DRIVELEGAL\nCore Engine',
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
     status: 'live',
     desc: 'The central intelligence layer powering all citizen, authority, and mobility features across the platform.',
     detail: 'Phases 1–8 live in prototype. Real backend integration in Phase 9.',
@@ -202,7 +210,11 @@ export default function EcosystemScreen() {
         <div>
           <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
           <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
+<<<<<<< HEAD
             These screens showcase DriVos's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+=======
+            These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           </p>
         </div>
       </div>
@@ -211,7 +223,11 @@ export default function EcosystemScreen() {
       <div className="space-y-1">
         <div className="flex items-center gap-2">
           <Globe className="w-5 h-5 text-electric" />
+<<<<<<< HEAD
           <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DriVos Ecosystem</h1>
+=======
+          <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DRIVELEGAL Ecosystem</h1>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
         </div>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">The intelligent mobility compliance platform of tomorrow</p>
       </div>

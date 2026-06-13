@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useEffect, useRef, useState } from 'react';
+=======
+import React, { useEffect, useRef, useState } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { 
   Bell, Search, User, ShieldAlert, Wifi, WifiOff, Globe, Sparkles 
 } from 'lucide-react';
@@ -79,7 +83,11 @@ export default function TopBar() {
       case 'adminMonitoring':
         return 'Enforcement System Audit';
       default:
+<<<<<<< HEAD
         return 'DriVos Portal';
+=======
+        return 'DRIVELEGAL Portal';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
     }
   };
 

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useRef, useEffect, useState } from 'react';
+=======
+import React, { useRef, useEffect, useState } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { Info, Navigation, Zap, ChevronRight } from 'lucide-react';
 
 const VisionBanner = () => (
@@ -7,7 +11,11 @@ const VisionBanner = () => (
     <div>
       <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
       <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
+<<<<<<< HEAD
         These screens showcase DriVos's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+=======
+        These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       </p>
     </div>
   </div>
@@ -47,10 +55,17 @@ const inspirationCards = [
 ];
 
 const iotFeatures = [
+<<<<<<< HEAD
   { emoji: '🔌', title: 'OBD2 Integration', desc: 'Connect DriVos to your vehicle\'s OBD2 port via Bluetooth adapter. Read: speed, location, engine status. Alert: before entering enforcement zones.' },
   { emoji: '⌚', title: 'Smartwatch Alerts', desc: 'Haptic alert when entering school zone. Vibration reminder: helmet check before starting engine.' },
   { emoji: '🪖', title: 'Smart Helmet Integration', desc: 'Future: Helmet with NFC chip confirms helmet worn → compliance logged automatically to profile.' },
   { emoji: '📱', title: 'Digital Dashboard Display', desc: 'Future: DriVos widget on CarPlay / Android Auto showing real-time compliance score and zone alerts while driving.' },
+=======
+  { emoji: '🔌', title: 'OBD2 Integration', desc: 'Connect DRIVELEGAL to your vehicle\'s OBD2 port via Bluetooth adapter. Read: speed, location, engine status. Alert: before entering enforcement zones.' },
+  { emoji: '⌚', title: 'Smartwatch Alerts', desc: 'Haptic alert when entering school zone. Vibration reminder: helmet check before starting engine.' },
+  { emoji: '🪖', title: 'Smart Helmet Integration', desc: 'Future: Helmet with NFC chip confirms helmet worn → compliance logged automatically to profile.' },
+  { emoji: '📱', title: 'Digital Dashboard Display', desc: 'Future: DRIVELEGAL widget on CarPlay / Android Auto showing real-time compliance score and zone alerts while driving.' },
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 ];
 
 export default function SmartMobilityScreen() {
@@ -64,7 +79,11 @@ export default function SmartMobilityScreen() {
           <Navigation className="w-5 h-5 text-electric" />
           <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">Smart Mobility Intelligence</h1>
         </div>
+<<<<<<< HEAD
         <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Where DriVos meets the future of transport</p>
+=======
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Where DRIVELEGAL meets the future of transport</p>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       </div>
 
       {/* Navigation Awareness Demo Card */}
@@ -139,7 +158,11 @@ export default function SmartMobilityScreen() {
             <p className="text-[11px] font-bold text-slate-800 dark:text-slate-200">{card.title}</p>
             <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{card.desc}</p>
             <div className="border-t border-white/10 pt-2.5 space-y-1">
+<<<<<<< HEAD
               <p className="text-[8px] font-extrabold uppercase tracking-widest text-electric">DriVos Vision:</p>
+=======
+              <p className="text-[8px] font-extrabold uppercase tracking-widest text-electric">DRIVELEGAL Vision:</p>
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
               <p className="text-[10px] text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{card.vision}</p>
             </div>
           </div>

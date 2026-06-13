@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useState, useEffect } from 'react';
+=======
+import React, { useState, useEffect } from 'react';
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
 import { Info, Share2, Trophy } from 'lucide-react';
 
 const VisionBanner = ({ partial }) => (
@@ -9,7 +13,11 @@ const VisionBanner = ({ partial }) => (
       <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
         {partial
           ? 'The Leaderboard and Rewards sections below are future vision items. Badge tracking and streak counter are live.'
+<<<<<<< HEAD
           : 'These screens showcase DriVos\'s future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.'}
+=======
+          : 'These screens showcase DRIVELEGAL\'s future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.'}
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
       </p>
     </div>
   </div>
@@ -169,7 +177,11 @@ export default function AchievementsScreen() {
           {[
             { icon: '🛡️', text: 'Insurance discount eligibility (subject to insurer partnerships)' },
             { icon: '🏛️', text: 'Priority lane at RTO offices (subject to authority adoption)' },
+<<<<<<< HEAD
             { icon: '⚡', text: 'DriVos Pro plan discount' },
+=======
+            { icon: '⚡', text: 'DRIVELEGAL Pro plan discount' },
+>>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">
               <span className="text-sm leading-none mt-0.5">{item.icon}</span>
