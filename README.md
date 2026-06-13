@@ -1,4 +1,4 @@
-# 🚘 DRIVELEGAL: AI-Powered Traffic Compliance & Challan Intelligence System
+# 🚘 DRIVOS: AI-Powered Traffic Compliance & Challan Intelligence System
 
 <div align="center">
   <img src="https://img.shields.io/badge/Category-Legal--Tech%20%2F%20Civic--Tech-blueviolet?style=for-the-badge" alt="Category" />
@@ -10,11 +10,11 @@
 ---
 
 ## 🌟 Overview
-**DRIVELEGAL** is a full-stack, state-of-the-art AI-powered Traffic Compliance & Challan Intelligence System designed to bridge the gap between complex legal traffic regulations and everyday citizens. 
+**DRIVOS** is a full-stack, state-of-the-art AI-powered Traffic Compliance & Challan Intelligence System designed to bridge the gap between complex legal traffic regulations and everyday citizens. 
 
 🖥️ **Live Web Application:** [https://drive-legal-seven.vercel.app](https://drive-legal-seven.vercel.app)
 
-Traffic violation laws and challan management remain fragmented, opaque, and confusing. DRIVELEGAL empowers vehicle owners with **real-time AI legal explanations, localized language interfaces, active document audits, cross-border rule warnings, and interactive simulation tools** while providing traffic authorities with comprehensive governance analytics.
+Traffic violation laws and challan management remain fragmented, opaque, and confusing. DRIVOS empowers vehicle owners with **real-time AI legal explanations, localized language interfaces, active document audits, cross-border rule warnings, and interactive simulation tools** while providing traffic authorities with comprehensive governance analytics.
 
 ---
 
@@ -80,7 +80,7 @@ Traffic violation laws and challan management remain fragmented, opaque, and con
 ## 📦 Core Directories
 
 ```
-drivelegal/
+drivos/
 ├── src/
 │   ├── components/       # Reusable UI widgets (Header, TopBar, BottomNav, ThemeToggle, etc.)
 │   ├── context/          # State managers (AppStateContext, GlobalContext)
@@ -104,7 +104,7 @@ Make sure you have [Node.js](https://nodejs.org/) installed.
 ### **1. Clone & Install Dependencies**
 ```bash
 # Navigate to project directory
-cd drivelegal
+cd drivos
 
 # Install npm packages
 npm install
@@ -130,5 +130,5 @@ npm run build
 
 ---
 <div align="center">
-  <sub>Drive Safe. Comply Legally. Powered by <b>DRIVELEGAL</b>.</sub>
+  <sub>Drive Safe. Comply Legally. Powered by <b>DRIVOS</b>.</sub>
 </div>

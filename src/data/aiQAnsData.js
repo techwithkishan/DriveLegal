@@ -1,5 +1,5 @@
 
-﻿// Automatically converted from DRIVELEGAL_AIQAns.xlsx
+﻿// Automatically converted from DRIVOS_AIQAns.xlsx
 
 
 export const AI_QA_DATABASE = [

@@ -801,7 +801,7 @@ export default function DashboardScreen() {
             {/* Step Progress indicator */}
             <div className="flex justify-between items-center text-[8.5px] font-black uppercase tracking-widest text-amber-600 dark:text-amber-400">
 
-              <span>{TOUR_STEPS[tourStep - 1]?.title || 'DRIVELEGAL Onboarding'}</span>
+              <span>{TOUR_STEPS[tourStep - 1]?.title || 'DRIVOS Onboarding'}</span>
 
               <span>Step {tourStep} of {TOUR_STEPS.length}</span>
             </div>

@@ -32,7 +32,7 @@ export default function SidebarNav() {
     { id: 'awareness', label: 'Awareness Hub', icon: BookOpen },
     { id: 'scenario', label: 'Scenario Simulator', icon: Sparkles },
 
-    { id: 'about', label: 'About DRIVELEGAL', icon: Info },
+    { id: 'about', label: 'About DRIVOS', icon: Info },
 
     { id: 'profile', label: 'My Profile', icon: User },
     { id: 'pricing', label: 'Upgrade & Pricing', icon: CreditCard },
@@ -70,14 +70,14 @@ export default function SidebarNav() {
               ? 'shadow-amber-500/20 group-hover:scale-105' 
               : 'shadow-electric/20 group-hover:scale-105'
           }`}>
-            <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL Logo" className="w-full h-full object-cover" />
+            <img src="/drivelegal-logo.jpg" alt="DRIVOS Logo" className="w-full h-full object-cover" />
 
           </div>
           {!collapsed && (
             <div className="space-y-0.5 animate-fade-in">
               <span className="font-heading font-black text-sm tracking-wider bg-gradient-to-r from-slate-900 dark:from-white to-electric bg-clip-text text-transparent uppercase leading-none block">
 
-                DRIVELEGAL
+                DRIVOS
 
               </span>
               <span className="text-[7.5px] text-slate-400 font-extrabold uppercase tracking-widest block leading-none">

@@ -162,11 +162,10 @@ export default function AuthScreen() {
       <div className="flex flex-col items-center mb-6 text-center">
 
         <div className="rounded-2xl overflow-hidden shadow-lg transition-all duration-500 w-16 h-16 mx-auto">
-          <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL Logo" className="w-full h-full object-cover" />
+          <img src="/drivelegal-logo.jpg" alt="DRIVOS Logo" className="w-full h-full object-cover" />
         </div>
         <h2 className="font-heading font-extrabold text-2xl tracking-wider text-slate-800 dark:text-white">
-          {isAuthorityPortal ? 'DRIVELEGAL RTO' : 'DRIVELEGAL'}
-
+          {isAuthorityPortal ? 'DRIVOS RTO' : 'DRIVOS'}
         </h2>
         <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
           {isAuthorityPortal 

@@ -21,7 +21,7 @@ export default function AIScreen() {
       id: 1,
       sender: 'bot',
 
-      text: "Hello! I am your DRIVELEGAL AI Companion. Ask me any traffic law questions, or tap one of the suggested chips below.",
+      text: "Hello! I am your DRIVOS AI Companion. Ask me any traffic law questions, or tap one of the suggested chips below.",
 
       isStructured: false,
       timestamp: new Date()
@@ -583,7 +583,7 @@ export default function AIScreen() {
           <div>
             <span className="text-xs font-bold text-slate-800 dark:text-white block uppercase tracking-wider">
 
-              DRIVELEGAL AI
+              DRIVOS AI
 
             </span>
             <span className="text-[8px] bg-electric/10 rounded-full px-2 py-0.5 mt-0.5 inline-block text-electric font-semibold uppercase">

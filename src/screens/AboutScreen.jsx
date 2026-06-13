@@ -85,7 +85,7 @@ export default function AboutScreen() {
         </div>
         <h1 className="text-2xl xs:text-3xl font-heading font-black text-slate-850 dark:text-white leading-tight">
 
-          About DRIVELEGAL
+          About DRIVOS
 
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-md mx-auto">
@@ -108,7 +108,7 @@ export default function AboutScreen() {
 
         <p className="text-xs text-slate-650 dark:text-slate-300 font-semibold leading-relaxed">
 
-          DRIVELEGAL is an AI-powered traffic law and challan intelligence platform designed to simplify traffic regulations, improve road safety awareness, and help users understand challans in a smarter and more accessible way.
+          DRIVOS is an AI-powered traffic law and challan intelligence platform designed to simplify traffic regulations, improve road safety awareness, and help users understand challans in a smarter and more accessible way.
 
         </p>
         
@@ -130,7 +130,7 @@ export default function AboutScreen() {
         
         <p className="text-xs text-slate-650 dark:text-slate-300 font-semibold leading-relaxed">
 
-          Unlike traditional challan platforms that mainly focus on payment or violation records, DRIVELEGAL helps users understand:
+          Unlike traditional challan platforms that mainly focus on payment or violation records, DRIVOS helps users understand:
 
         </p>
 
@@ -203,7 +203,7 @@ export default function AboutScreen() {
             <h5 className="text-[10px] font-black text-slate-800 dark:text-white uppercase tracking-wider">Citizen-First Approach</h5>
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-normal mt-0.5">
 
-              DRIVELEGAL is designed with a citizen-first approach to make traffic laws more transparent, understandable, and accessible for everyone.
+              DRIVOS is designed with a citizen-first approach to make traffic laws more transparent, understandable, and accessible for everyone.
 
             </p>
           </div>

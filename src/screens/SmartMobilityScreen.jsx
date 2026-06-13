@@ -10,7 +10,7 @@ const VisionBanner = () => (
       <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
       <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
 
-        These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+        These screens showcase DRIVOS's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
 
       </p>
     </div>
@@ -52,10 +52,10 @@ const inspirationCards = [
 
 const iotFeatures = [
 
-  { emoji: '🔌', title: 'OBD2 Integration', desc: 'Connect DRIVELEGAL to your vehicle\'s OBD2 port via Bluetooth adapter. Read: speed, location, engine status. Alert: before entering enforcement zones.' },
+  { emoji: '🔌', title: 'OBD2 Integration', desc: 'Connect DRIVOS to your vehicle\'s OBD2 port via Bluetooth adapter. Read: speed, location, engine status. Alert: before entering enforcement zones.' },
   { emoji: '⌚', title: 'Smartwatch Alerts', desc: 'Haptic alert when entering school zone. Vibration reminder: helmet check before starting engine.' },
   { emoji: '🪖', title: 'Smart Helmet Integration', desc: 'Future: Helmet with NFC chip confirms helmet worn → compliance logged automatically to profile.' },
-  { emoji: '📱', title: 'Digital Dashboard Display', desc: 'Future: DRIVELEGAL widget on CarPlay / Android Auto showing real-time compliance score and zone alerts while driving.' },
+  { emoji: '📱', title: 'Digital Dashboard Display', desc: 'Future: DRIVOS widget on CarPlay / Android Auto showing real-time compliance score and zone alerts while driving.' },
 
 ];
 
@@ -71,7 +71,7 @@ export default function SmartMobilityScreen() {
           <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">Smart Mobility Intelligence</h1>
         </div>
 
-        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Where DRIVELEGAL meets the future of transport</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Where DRIVOS meets the future of transport</p>
 
       </div>
 
@@ -148,7 +148,7 @@ export default function SmartMobilityScreen() {
             <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{card.desc}</p>
             <div className="border-t border-white/10 pt-2.5 space-y-1">
 
-              <p className="text-[8px] font-extrabold uppercase tracking-widest text-electric">DRIVELEGAL Vision:</p>
+              <p className="text-[8px] font-extrabold uppercase tracking-widest text-electric">DRIVOS Vision:</p>
 
               <p className="text-[10px] text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{card.vision}</p>
             </div>

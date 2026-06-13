@@ -527,7 +527,7 @@ export default function PricingScreen() {
 
             <div className="text-center text-[7px] text-slate-400 font-semibold uppercase tracking-wider flex items-center justify-center gap-1 mt-1">
 
-              <Lock className="w-3.5 h-3.5" /> Powered by DRIVELEGAL Secure Payments
+              <Lock className="w-3.5 h-3.5" /> Powered by DRIVOS Secure Payments
 
             </div>
 

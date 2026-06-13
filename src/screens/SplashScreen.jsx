@@ -132,7 +132,7 @@ export default function SplashScreen() {
         >
           <img
             src="/drivelegal-logo.jpg"
-            alt="DRIVELEGAL"
+            alt="DRIVOS"
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </div>
@@ -152,7 +152,7 @@ export default function SplashScreen() {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          DRIVE<span style={{ WebkitTextFillColor: '#3B82F6', color: '#3B82F6' }}>LEGAL</span>
+          DRIV<span style={{ WebkitTextFillColor: '#3B82F6', color: '#3B82F6' }}>OS</span>
         </h1>
 
         {/* Divider */}
@@ -381,7 +381,7 @@ export default function SplashScreen() {
               color: '#1e3a5f',
             }}
           >
-            DRIVELEGAL v1.0
+            DRIVOS v1.0
           </span>
         </div>
       </div>

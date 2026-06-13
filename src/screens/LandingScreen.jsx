@@ -26,6 +26,32 @@ export default function LandingScreen() {
   const [selectedViolations, setSelectedViolations] = useState(['helmet']); // Default pre-select helmet
   const [activeFooterTab, setActiveFooterTab] = useState(null);
 
+  // Interactive "How It Works" Stepper states
+  const [activeWorksStep, setActiveWorksStep] = useState(0);
+  const [step1State, setStep1State] = useState('Karnataka');
+  const [step1Vehicle, setStep1Vehicle] = useState('Two-Wheeler');
+  const [step2Violations, setStep2Violations] = useState(['helmet', 'insurance']);
+  const [step3Chat, setStep3Chat] = useState([
+    { sender: 'ai', text: 'Hi! Ask me any question about traffic laws. Click one of the preset questions below to test me.' }
+  ]);
+  const [step3Typing, setStep3Typing] = useState(false);
+  const [step4CleanDays, setStep4CleanDays] = useState(15);
+  const [step4Violations, setStep4Violations] = useState(1);
+
+  const handleStep3QuestionClick = (questionText, answerText) => {
+    if (step3Typing) return;
+    
+    // Add user message
+    setStep3Chat(prev => [...prev, { sender: 'user', text: questionText }]);
+    setStep3Typing(true);
+    
+    // Add AI typing response
+    setTimeout(() => {
+      setStep3Typing(false);
+      setStep3Chat(prev => [...prev, { sender: 'ai', text: answerText }]);
+    }, 1000);
+  };
+
   // Tracks navbar shrink on scroll past hero
   useEffect(() => {
     const handleScroll = () => {
@@ -133,11 +159,10 @@ export default function LandingScreen() {
           <div className="flex items-center gap-2 cursor-pointer group" onClick={() => handleScrollToSection('hero-section')}>
 
             <div className="rounded-xl overflow-hidden shadow-lg shadow-electric/25 group-hover:scale-105 transition-all w-9 h-9 shrink-0">
-              <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL" className="w-full h-full object-cover" />
+              <img src="/drivelegal-logo.jpg" alt="DRIVOS" className="w-full h-full object-cover" />
             </div>
             <span className="font-heading font-black text-lg tracking-wider bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent uppercase leading-none">
-              DRIVELEGAL
-
+              DRIVOS
             </span>
           </div>
 
@@ -322,15 +347,13 @@ export default function LandingScreen() {
       </section>
 
 
-      {/* SECTION 3 — WHAT IS DRIVELEGAL */}
+      {/* SECTION 3 — WHAT IS DRIVOS */}
 
       <section id="what-is-section" className="py-20 px-6 max-w-7xl mx-auto w-full text-center scroll-mt-20">
         <div className="space-y-3 mb-12">
           <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Traffic Compliance Made Simple</span>
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
-
-            What is DRIVELEGAL?
-
+            What is DRIVOS?
           </h2>
           <div className="w-12 h-1 bg-electric mx-auto rounded-full" />
         </div>
@@ -344,9 +367,7 @@ export default function LandingScreen() {
             </div>
             <h3 className="text-base font-extrabold text-slate-800 dark:text-white">Traffic Compliance Made Simple</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
-
-              DRIVELEGAL helps every Indian driver understand challan laws, check fines, and improve driving compliance — without needing a lawyer.
-
+              DRIVOS helps every Indian driver understand challan laws, check fines, and improve driving compliance — without needing a lawyer.
             </p>
           </div>
 
@@ -370,109 +391,469 @@ export default function LandingScreen() {
             </div>
             <h3 className="text-base font-extrabold text-slate-800 dark:text-white">Prevention Over Penalty</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
-
-              Instead of just reacting to challans, DRIVELEGAL helps you avoid them. Smart reminders, zone alerts, and personalized driving insights.
-
+              Instead of just reacting to challans, DRIVOS helps you avoid them. Smart reminders, zone alerts, and personalized driving insights.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4 — HOW IT WORKS */}
+      {/* SECTION 4 — HOW DRIVOS WORKS */}
       <section id="how-it-works-section" className="py-20 px-6 max-w-7xl mx-auto w-full text-center pb-24 scroll-mt-20">
         
-        <div className="space-y-3 mb-16">
+        <div className="space-y-3 mb-12">
           <span className="text-[10px] text-electric font-black uppercase tracking-widest block font-sans">Four Simple Steps</span>
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
-
-            How DRIVELEGAL Works
-
+            How DRIVOS Works
           </h2>
           <div className="w-12 h-1 bg-electric mx-auto rounded-full" />
         </div>
 
-        <div className="space-y-16">
-          {/* Step 1 */}
-          <div className="grid md:grid-cols-2 gap-10 items-center text-left relative">
-            <div className="absolute -top-12 left-0 text-7xl font-black font-mono text-slate-200/50 dark:text-white/5 select-none tracking-tight">01</div>
-            <div className="space-y-3 relative z-10">
-              <h3 className="text-lg font-heading font-extrabold text-slate-850 dark:text-white">
-                Step 1 — Select Your Location & Vehicle
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-sm">
-                Tell us where you are and what you drive. Auto-detect or manual select. Takes 10 seconds.
-              </p>
+        {/* Dynamic Horizontal Stepper Bar */}
+        <div className="relative max-w-3xl mx-auto mb-12 px-4">
+          {/* Progress Connector Line */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-slate-200 dark:bg-white/5 -translate-y-1/2 z-0" />
+          <div 
+            className="absolute top-1/2 left-0 h-0.5 bg-gradient-to-r from-electric to-blue-500 -translate-y-1/2 z-0 transition-all duration-500" 
+            style={{ width: `${(activeWorksStep / 3) * 100}%` }}
+          />
+
+          <div className="relative z-10 flex justify-between items-center">
+            {[
+              { label: '01 SELECT', desc: 'Location & Vehicle' },
+              { label: '02 CHECK', desc: 'Violations & Fines' },
+              { label: '03 ASK AI', desc: 'Clear Legal Guide' },
+              { label: '04 MONITOR', desc: 'Safety Score' }
+            ].map((step, idx) => {
+              const isActive = activeWorksStep === idx;
+              const isCompleted = activeWorksStep > idx;
+              return (
+                <button
+                  key={idx}
+                  onClick={() => setActiveWorksStep(idx)}
+                  className="flex flex-col items-center focus:outline-none group"
+                >
+                  <div className={`w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs font-black transition-all duration-300 border ${
+                    isActive 
+                      ? 'bg-electric border-electric text-white scale-110 shadow-lg shadow-electric/35' 
+                      : isCompleted
+                      ? 'bg-blue-655 border-blue-600 text-white'
+                      : 'bg-white dark:bg-navy-900 border-slate-200 dark:border-white/10 text-slate-400 dark:text-slate-500 hover:border-slate-350'
+                  }`}>
+                    {idx + 1}
+                  </div>
+                  <span className={`text-[8.5px] font-black uppercase tracking-wider mt-2 hidden sm:block ${
+                    isActive ? 'text-electric' : 'text-slate-400 dark:text-slate-500'
+                  }`}>
+                    {step.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Stepper Viewport Grid */}
+        <div className="glass-panel p-6 sm:p-8 max-w-5xl mx-auto border-electric/10 relative overflow-hidden shadow-2xl min-h-[420px] flex flex-col justify-between">
+          <div className="grid md:grid-cols-12 gap-8 items-center text-left">
+            {/* Left Info Column (5 cols) */}
+            <div className="md:col-span-5 space-y-4">
+              <span className="text-[9px] text-electric font-black uppercase tracking-widest block">Step {activeWorksStep + 1} of 4</span>
+              
+              {activeWorksStep === 0 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h3 className="text-xl font-heading font-black text-slate-850 dark:text-white leading-tight">
+                    Select Your Location & Vehicle
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-450 font-medium leading-relaxed">
+                    Traffic rules and challan structures vary drastically across Indian states. Select your target region and primary vehicle type to load region-specific laws instantly.
+                  </p>
+                  <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 space-y-1">
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Auto-detection support via GPS</p>
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Dynamic VAHAN registry sync</p>
+                  </div>
+                </div>
+              )}
+
+              {activeWorksStep === 1 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h3 className="text-xl font-heading font-black text-slate-850 dark:text-white leading-tight">
+                    Check Violations & Penalties
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-455 font-medium leading-relaxed">
+                    Instantly simulate multiple road offenses to view the compound penalty values. See the exact section under the Motor Vehicles Act (e.g. Sec 129, Sec 196) and license suspension risk.
+                  </p>
+                  <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 space-y-1">
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Real-time compound fine logic</p>
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Official RTO compliance rates</p>
+                  </div>
+                </div>
+              )}
+
+              {activeWorksStep === 2 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h3 className="text-xl font-heading font-black text-slate-850 dark:text-white leading-tight">
+                    Get Jargon-Free AI Legal Help
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-455 font-medium leading-relaxed">
+                    Don't understand legal RTO notices? Ask DRIVOS AI. Speak or type your query in Hinglish, Hindi, or English and get simplified explanations, fine disputes tips, and next steps.
+                  </p>
+                  <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 space-y-1">
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> 22 Official languages supported</p>
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Court appeal guidance tips</p>
+                  </div>
+                </div>
+              )}
+
+              {activeWorksStep === 3 && (
+                <div className="space-y-3 animate-fade-in">
+                  <h3 className="text-xl font-heading font-black text-slate-850 dark:text-white leading-tight">
+                    Monitor Score & Keep Streak
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-455 font-medium leading-relaxed">
+                    Gamify your driving safety. Build clean compliance streaks, improve your dynamic Safety Score dial, and secure lower insurance quotes by staying out of enforcement databases.
+                  </p>
+                  <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 space-y-1">
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Dynamic demerit calculations</p>
+                    <p className="flex items-center gap-1.5"><Check className="w-3.5 h-3.5 text-electric-glow" /> Reward multipliers for clean streaks</p>
+                  </div>
+                </div>
+              )}
             </div>
-            {/* Visual */}
-            <div className="bg-slate-100 dark:bg-white/5 p-4.5 rounded-2xl border border-slate-250 dark:border-white/5 flex items-center justify-between text-xs max-w-xs justify-self-center md:justify-self-end w-full">
-              <div className="flex items-center gap-2 font-bold text-slate-700 dark:text-slate-200">
-                <MapPin className="w-4 h-4 text-electric-glow animate-pulse" />
-                <span>Karnataka, Bengaluru</span>
-              </div>
-              <span className="text-[8px] bg-electric/15 text-electric px-1.5 py-0.5 rounded font-extrabold uppercase">Auto</span>
+
+            {/* Right Interactive Column (7 cols) */}
+            <div className="md:col-span-7 flex justify-center w-full">
+              
+              {/* Interactive Widget 1 (Location & Vehicle selector) */}
+              {activeWorksStep === 0 && (
+                <div className="w-full max-w-sm bg-slate-950/40 border border-slate-200/10 dark:border-white/5 p-5 rounded-2xl space-y-4 shadow-2xl animate-fade-in">
+                  <span className="text-[9px] uppercase font-bold text-slate-400 block tracking-wider">Interactive Region Selector</span>
+                  
+                  {/* States row */}
+                  <div className="space-y-1.5">
+                    <span className="text-[8px] uppercase tracking-widest text-slate-500 block">Select Region</span>
+                    <div className="grid grid-cols-2 gap-2 text-xs font-bold">
+                      {['Karnataka', 'Goa', 'Maharashtra', 'Delhi'].map(st => (
+                        <button
+                          key={st}
+                          onClick={() => setStep1State(st)}
+                          className={`p-2 rounded-xl border text-center transition-all duration-300 ${
+                            step1State === st
+                              ? 'bg-electric border-electric text-white shadow-lg shadow-electric/25'
+                              : 'bg-slate-900 border-white/5 text-slate-400 hover:border-white/15'
+                          }`}
+                        >
+                          {st} State
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Vehicles row */}
+                  <div className="space-y-1.5">
+                    <span className="text-[8px] uppercase tracking-widest text-slate-500 block">Select Vehicle Class</span>
+                    <div className="grid grid-cols-2 gap-2 text-[10px] font-black uppercase tracking-wider">
+                      {['Two-Wheeler', 'Four-Wheeler'].map(vh => (
+                        <button
+                          key={vh}
+                          onClick={() => setStep1Vehicle(vh)}
+                          className={`p-2 rounded-xl border text-center transition-all duration-300 ${
+                            step1Vehicle === vh
+                              ? 'bg-amber-500 border-amber-500 text-slate-955 shadow-lg shadow-amber-500/20'
+                              : 'bg-slate-900 border-white/5 text-slate-400 hover:border-white/15'
+                          }`}
+                        >
+                          {vh}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Glowing Status Output Feedback */}
+                  <div className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl font-mono text-[9px] text-slate-300 leading-normal space-y-1">
+                    <div className="flex items-center gap-1 text-electric"><span className="w-1.5 h-1.5 rounded-full bg-electric animate-pulse" /> Region sync established</div>
+                    <div className="text-white mt-1.5 font-bold uppercase tracking-wider">Active Policy: {step1State.toUpperCase()} — {step1Vehicle.toUpperCase()}</div>
+                    <div className="text-slate-400 mt-1">
+                      • Base Speed Limit: {step1Vehicle === 'Two-Wheeler' ? '60 km/h' : '80 km/h'}<br />
+                      • Helmet Requirement: {step1Vehicle === 'Two-Wheeler' ? 'Mandatory (Rider & Pillion)' : 'Not Applicable'}<br />
+                      • Seatbelt Penalty: {step1Vehicle === 'Four-Wheeler' ? '₹1,000 (Driver & Passengers)' : 'Not Applicable'}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Interactive Widget 2 (Violations checklist & Challan simulation) */}
+              {activeWorksStep === 1 && (
+                <div className="w-full max-w-sm bg-slate-950/40 border border-slate-200/10 dark:border-white/5 p-5 rounded-2xl space-y-4 shadow-2xl animate-fade-in">
+                  <span className="text-[9px] uppercase font-bold text-slate-400 block tracking-wider">Simulate Multiple Violations</span>
+                  
+                  {/* Badges list toggle */}
+                  <div className="flex flex-wrap gap-2 text-[8px] font-extrabold uppercase">
+                    {[
+                      { id: 'helmet', label: 'No Helmet', fine: 1000 },
+                      { id: 'insurance', label: 'No Insurance', fine: 2000 },
+                      { id: 'speeding', label: 'Over-speeding', fine: 1000 },
+                      { id: 'licence', label: 'No Licence', fine: 5000 },
+                      { id: 'seatbelt', label: 'No Seatbelt', fine: 1000 }
+                    ].map(v => {
+                      const isSelected = step2Violations.includes(v.id);
+                      return (
+                        <button
+                          key={v.id}
+                          onClick={() => {
+                            setStep2Violations(prev => 
+                              prev.includes(v.id) ? prev.filter(x => x !== v.id) : [...prev, v.id]
+                            );
+                          }}
+                          className={`px-2.5 py-1.5 rounded-xl border transition-all duration-300 flex items-center gap-1 ${
+                            isSelected
+                              ? 'bg-red-500/15 border-red-500/30 text-red-400 font-extrabold'
+                              : 'bg-slate-900 border-white/5 text-slate-500 hover:border-white/10'
+                          }`}
+                        >
+                          <span>{v.label} (₹{v.fine})</span>
+                          {isSelected && <Check className="w-2.5 h-2.5 text-red-500" />}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Mock RTO Bill/Receipt */}
+                  <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl font-mono text-[9px] text-white space-y-2.5 shadow-inner">
+                    <div className="flex justify-between items-center border-b border-white/5 pb-1 text-slate-400 font-black">
+                      <span>RTO SIMULATION RECEIPT</span>
+                      <span>IN 🇮🇳</span>
+                    </div>
+
+                    {step2Violations.length > 0 ? (
+                      <div className="space-y-1.5 max-h-24 overflow-y-auto">
+                        {[
+                          { id: 'helmet', label: 'No Helmet Fine', fine: 1000, code: 'Sec 129, MV Act' },
+                          { id: 'insurance', label: 'No Insurance Fine', fine: 2000, code: 'Sec 196, MV Act' },
+                          { id: 'speeding', label: 'Over-speeding Fine', fine: 1000, code: 'Sec 112, MV Act' },
+                          { id: 'licence', label: 'No Licence Fine', fine: 5000, code: 'Sec 181, MV Act' },
+                          { id: 'seatbelt', label: 'No Seatbelt Fine', fine: 1000, code: 'Sec 138(3), MV Act' }
+                        ].filter(x => step2Violations.includes(x.id)).map(x => (
+                          <div key={x.id} className="flex justify-between items-start">
+                            <div>
+                              <span className="block font-bold">{x.label}</span>
+                              <span className="block text-[7.5px] text-slate-500">{x.code}</span>
+                            </div>
+                            <span className="font-bold text-white shrink-0">₹{x.fine}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="text-center py-4 text-slate-600">
+                        Check offenses above to run challan penalty logic
+                      </div>
+                    )}
+
+                    <div className="border-t border-dashed border-slate-800 pt-2 flex justify-between items-center text-[10px] font-black">
+                      <span className="text-slate-400">Total simulated fine:</span>
+                      <span className="text-electric text-xs">
+                        ₹{[
+                          { id: 'helmet', fine: 1000 },
+                          { id: 'insurance', fine: 2000 },
+                          { id: 'speeding', fine: 1000 },
+                          { id: 'licence', fine: 5000 },
+                          { id: 'seatbelt', fine: 1000 }
+                        ].filter(x => step2Violations.includes(x.id)).reduce((a, b) => a + b.fine, 0).toLocaleString('en-IN')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Interactive Widget 3 (Simplified legal AI chat Q&A window) */}
+              {activeWorksStep === 2 && (
+                <div className="w-full max-w-sm bg-slate-955/40 border border-slate-200/10 dark:border-white/5 p-5 rounded-2xl space-y-4 shadow-2xl animate-fade-in flex flex-col justify-between">
+                  <span className="text-[9px] uppercase font-bold text-slate-400 block tracking-wider">Simulated AI Chat Advisor</span>
+
+                  {/* Chat logs box */}
+                  <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-xl h-44 overflow-y-auto space-y-3 font-sans scrollbar-none">
+                    {step3Chat.map((msg, index) => (
+                      <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-slide-up`}>
+                        <div className={`text-[9.5px] p-2.5 rounded-xl max-w-[85%] leading-relaxed ${
+                          msg.sender === 'user'
+                            ? 'bg-electric text-white rounded-br-none'
+                            : 'bg-slate-800 text-slate-250 rounded-bl-none border border-slate-700/50'
+                        }`}>
+                          {msg.text}
+                        </div>
+                      </div>
+                    ))}
+                    {step3Typing && (
+                      <div className="flex justify-start animate-pulse">
+                        <div className="bg-slate-800 text-slate-400 text-[8px] p-2.5 rounded-xl rounded-bl-none font-mono">
+                          DRIVOS AI is writing simplified laws...
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Predefined questions cards selection */}
+                  <div className="space-y-1 text-left">
+                    <span className="text-[8px] uppercase tracking-widest text-slate-500 block">Click a Question to Ask:</span>
+                    <div className="grid grid-cols-1 gap-1.5">
+                      {[
+                        { 
+                          q: "What is the fine for driving with an expired PUC in Karnataka?", 
+                          a: "Expired PUC fine (Sec 190(2)) is ₹10,000 for 1st violation in KA. It is highly recommended to renew your PUC online to sync with Sarathi databases." 
+                        },
+                        { 
+                          q: "Is helmet mandatory for a pillion rider in Goa?", 
+                          a: "Yes! Helmet for both rider & pillion is strictly mandatory in Goa (Sec 129 MV Act). Violation fine is ₹1,000 & potential license suspension for 3 months." 
+                        },
+                        { 
+                          q: "What is the penalty if I talk on mobile while driving?", 
+                          a: "Mobile usage while driving (Sec 184) carries a fine of ₹1,500 - ₹5,000 or up to 1 year imprisonment. Repeating the offense leads to a ₹10,000 fine." 
+                        }
+                      ].map((card, i) => (
+                        <button
+                          key={i}
+                          onClick={() => handleStep3QuestionClick(card.q, card.a)}
+                          className="p-2 bg-slate-900 border border-white/5 hover:border-electric/25 rounded-xl text-left text-[9px] font-bold text-slate-300 hover:text-white transition-all truncate"
+                          disabled={step3Typing}
+                        >
+                          ❓ "{card.q}"
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Interactive Widget 4 (Safety score progress dial and sliders) */}
+              {activeWorksStep === 3 && (
+                <div className="w-full max-w-sm bg-slate-955/40 border border-slate-200/10 dark:border-white/5 p-5 rounded-2xl space-y-4 shadow-2xl animate-fade-in flex flex-col items-center justify-between">
+                  <span className="text-[9px] uppercase font-bold text-slate-400 block tracking-wider self-start">Compliance & Safety Score Dial</span>
+
+                  {/* Radial dial block */}
+                  {(() => {
+                    const score = Math.max(0, Math.min(100, 50 + (step4CleanDays * 2) - (step4Violations * 10)));
+                    let statusLabel = 'Moderate Risk';
+                    let strokeColor = '#f59e0b'; // amber
+                    let bgAlertClass = 'bg-amber-500/10 border-amber-500/20 text-amber-400';
+                    let tips = 'Maintain speed bounds in school zones to improve your score.';
+                    
+                    if (score >= 80) {
+                      statusLabel = 'Excellent Compliance';
+                      strokeColor = '#10B981'; // emerald
+                      bgAlertClass = 'bg-emerald-500/15 border-emerald-500/30 text-emerald-405';
+                      tips = 'Great driving habits! You qualify for premium insurance rewards.';
+                    } else if (score < 50) {
+                      statusLabel = 'High Penalty Risk';
+                      strokeColor = '#EF4444'; // red
+                      bgAlertClass = 'bg-red-500/15 border-red-500/30 text-red-405';
+                      tips = 'Critical risk of license suspension! Avoid active violations immediately.';
+                    }
+
+                    // Stroke offset calculation for SVGs
+                    const radius = 32;
+                    const strokeDasharray = 2 * Math.PI * radius;
+                    const strokeDashoffset = strokeDasharray - (score / 100) * strokeDasharray;
+
+                    return (
+                      <>
+                        <div className="flex items-center gap-6 w-full">
+                          {/* Radial Progress SVG */}
+                          <div className="relative w-24 h-24 shrink-0 flex items-center justify-center">
+                            <svg className="w-full h-full transform -rotate-90" viewBox="0 0 80 80">
+                              <circle cx="40" cy="40" r={radius} stroke="rgba(255,255,255,0.05)" strokeWidth="6" fill="transparent" />
+                              <circle 
+                                cx="40" 
+                                cy="40" 
+                                r={radius} 
+                                stroke={strokeColor} 
+                                strokeWidth="6" 
+                                fill="transparent" 
+                                strokeDasharray={strokeDasharray}
+                                strokeDashoffset={strokeDashoffset}
+                                className="transition-all duration-500"
+                                strokeLinecap="round"
+                              />
+                            </svg>
+                            <div className="absolute flex flex-col items-center justify-center text-center">
+                              <span className="text-xl font-mono font-black text-white">{score}</span>
+                              <span className="text-[7px] font-extrabold uppercase text-slate-500">Score</span>
+                            </div>
+                          </div>
+
+                          {/* Dynamic Feedback Panel */}
+                          <div className={`flex-1 p-3 rounded-xl border ${bgAlertClass} text-[10px] space-y-1 text-left`}>
+                            <span className="font-extrabold block uppercase tracking-wider text-[8px] opacity-75">Status: {statusLabel}</span>
+                            <p className="font-bold leading-normal">{tips}</p>
+                          </div>
+                        </div>
+
+                        {/* Interactive sliders adjustments */}
+                        <div className="w-full space-y-3.5 text-left">
+                          <div className="space-y-1">
+                            <div className="flex justify-between text-[9px] font-bold text-slate-400">
+                              <span>CLEAN STREAK ({step4CleanDays} DAYS)</span>
+                              <span className="text-emerald-400">+{(step4CleanDays * 2)} Points</span>
+                            </div>
+                            <input 
+                              type="range" 
+                              min="0" 
+                              max="30" 
+                              value={step4CleanDays}
+                              onChange={(e) => setStep4CleanDays(Number(e.target.value))}
+                              className="w-full accent-electric cursor-pointer h-1 rounded bg-slate-800"
+                            />
+                          </div>
+
+                          <div className="space-y-1">
+                            <div className="flex justify-between text-[9px] font-bold text-slate-400">
+                              <span>ACTIVE VIOLATIONS ({step4Violations})</span>
+                              <span className="text-red-400">-{step4Violations * 10} Points</span>
+                            </div>
+                            <input 
+                              type="range" 
+                              min="0" 
+                              max="5" 
+                              value={step4Violations}
+                              onChange={(e) => setStep4Violations(Number(e.target.value))}
+                              className="w-full accent-red-500 cursor-pointer h-1 rounded bg-slate-800"
+                            />
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })()}
+                </div>
+              )}
+
             </div>
           </div>
 
-          {/* Step 2 */}
-          <div className="grid md:grid-cols-2 gap-10 items-center text-left md:text-right relative">
-            <div className="absolute -top-12 md:right-0 text-7xl font-black font-mono text-slate-200/50 dark:text-white/5 select-none tracking-tight">02</div>
-            <div className="md:order-2 space-y-3 relative z-10">
-              <h3 className="text-lg font-heading font-extrabold text-slate-850 dark:text-white">
-                Step 2 — Check Your Violation
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-sm md:ml-auto">
-                Select any violation to instantly see the exact fine, legal section, and consequences under Indian law.
-              </p>
-            </div>
-            {/* Visual */}
-            <div className="md:order-1 flex flex-wrap gap-2 max-w-xs justify-center md:justify-start w-full justify-self-center md:justify-self-start">
-              <span className="px-3.5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wide uppercase bg-electric text-white shadow-md shadow-electric/20 shrink-0">No Helmet (₹1,000)</span>
-              <span className="px-3.5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wide uppercase bg-electric text-white shadow-md shadow-electric/20 shrink-0">Over-speeding (₹1,000)</span>
-              <span className="px-3.5 py-1.5 rounded-full text-[10px] font-extrabold tracking-wide uppercase bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5 text-slate-500 shrink-0">No Seatbelt</span>
-            </div>
-          </div>
-
-          {/* Step 3 */}
-          <div className="grid md:grid-cols-2 gap-10 items-center text-left relative">
-            <div className="absolute -top-12 left-0 text-7xl font-black font-mono text-slate-200/50 dark:text-white/5 select-none tracking-tight">03</div>
-            <div className="space-y-3 relative z-10">
-              <h3 className="text-lg font-heading font-extrabold text-slate-850 dark:text-white">
-                Step 3 — Learn From AI
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-sm">
-                Ask anything. Our AI explains traffic laws in simple Hindi, English, or Hinglish. No legal jargon.
-              </p>
-            </div>
-            {/* Visual */}
-            <div className="bg-slate-100 dark:bg-white/5 p-4.5 rounded-2xl border border-slate-250 dark:border-white/5 space-y-2 max-w-xs justify-self-center md:justify-self-end w-full text-xs font-bold leading-normal">
-              <div className="bg-electric/15 text-electric p-2.5 rounded-xl rounded-bl-none text-[10px] text-left">
-                "What is the fine for driving with an expired PUC in Karnataka?"
-              </div>
-              <div className="bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-350 p-2.5 rounded-xl rounded-br-none text-[10px] text-right">
-                "Hi Arjun, expired PUC fine in KA is ₹10,000 for 1st violation (Sec 190(2)). Secure online updates are recommended."
-              </div>
-            </div>
-          </div>
-
-          {/* Step 4 */}
-          <div className="grid md:grid-cols-2 gap-10 items-center text-left md:text-right relative">
-            <div className="absolute -top-12 md:right-0 text-7xl font-black font-mono text-slate-200/50 dark:text-white/5 select-none tracking-tight">04</div>
-            <div className="md:order-2 space-y-3 relative z-10">
-              <h3 className="text-lg font-heading font-extrabold text-slate-850 dark:text-white">
-                Step 4 — Track & Improve
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-sm md:ml-auto">
-                Track your challan history, monitor your safety score, and get personalized tips to drive better.
-              </p>
-            </div>
-            {/* Visual */}
-            <div className="md:order-1 bg-amber-500/10 border border-amber-500/25 p-4 rounded-xl max-w-xs justify-self-center md:justify-self-start w-full text-left flex items-center gap-3">
-              <div className="bg-amber-500/20 p-2 rounded-xl text-amber-500 font-mono text-sm font-black">67</div>
-              <div>
-                <span className="text-[9px] uppercase tracking-wider font-bold text-amber-500 block">Current Compliance Score</span>
-                <span className="text-[10px] text-slate-700 dark:text-slate-300 font-bold block mt-0.5">Moderate Risk (Target: &gt;80)</span>
-              </div>
-            </div>
+          {/* Bottom controls panel */}
+          <div className="border-t border-slate-200/5 dark:border-white/5 pt-4 mt-6 flex justify-between items-center text-xs">
+            <button
+              onClick={() => setActiveWorksStep(prev => Math.max(0, prev - 1))}
+              disabled={activeWorksStep === 0}
+              className={`px-4 py-2 font-bold uppercase tracking-wider rounded-xl transition-all border ${
+                activeWorksStep === 0
+                  ? 'border-transparent text-slate-605'
+                  : 'bg-slate-900 border-white/5 hover:border-white/10 text-slate-300'
+              }`}
+            >
+              ← Back
+            </button>
+            <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+              Step {activeWorksStep + 1} of 4
+            </span>
+            <button
+              onClick={() => setActiveWorksStep(prev => Math.min(3, prev + 1))}
+              disabled={activeWorksStep === 3}
+              className={`px-4 py-2 font-black uppercase tracking-widest rounded-xl transition-all ${
+                activeWorksStep === 3
+                  ? 'bg-slate-800 text-slate-500 cursor-default'
+                  : 'bg-electric hover:bg-electric-glow text-white shadow-md shadow-electric/25'
+              }`}
+            >
+              Next Step →
+            </button>
           </div>
         </div>
 
@@ -518,7 +899,7 @@ export default function LandingScreen() {
         
         <div className="space-y-3 mb-10">
 
-          <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Experience DRIVELEGAL Instantly</span>
+          <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Experience DRIVOS Instantly</span>
 
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
             Try It Right Now — No Login Needed
@@ -845,7 +1226,7 @@ export default function LandingScreen() {
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
 
-                DRIVELEGAL's governance layer gives traffic departments, RTOs, and civic agencies real-time violation analytics, zone heatmaps, and citizen compliance reports.
+                DRIVOS's governance layer gives traffic departments, RTOs, and civic agencies real-time violation analytics, zone heatmaps, and citizen compliance reports.
 
               </p>
               
@@ -933,7 +1314,7 @@ export default function LandingScreen() {
           <div className="glass-panel p-5.5 space-y-4 hover:scale-[1.01] transition-all flex flex-col justify-between">
             <p className="text-xs text-slate-550 dark:text-slate-400 font-semibold leading-relaxed italic">
 
-              "I had no idea the fine for no insurance was ₹2,000 and that my accident claim would be void. DRIVELEGAL explained it in 30 seconds."
+              "I had no idea the fine for no insurance was ₹2,000 and that my accident claim would be void. DRIVOS explained it in 30 seconds."
 
             </p>
             <div className="flex items-center justify-between border-t border-slate-150 dark:border-white/5 pt-3 text-[10px] font-bold">
@@ -1026,7 +1407,7 @@ export default function LandingScreen() {
                 <Shield className="w-4 h-4 fill-white/10" />
               </div>
 
-              <span className="font-heading font-black text-sm text-slate-850 dark:text-white tracking-widest">DRIVELEGAL</span>
+              <span className="font-heading font-black text-sm text-slate-850 dark:text-white tracking-widest">DRIVOS</span>
 
             </div>
             <p className="text-[9px] text-slate-450 dark:text-slate-500 font-bold leading-normal tracking-wide mt-2">
@@ -1073,7 +1454,7 @@ export default function LandingScreen() {
         {/* Bottom bar */}
         <div className="max-w-7xl mx-auto w-full pt-8 mt-10 border-t border-slate-200 dark:border-slate-850/60 flex flex-wrap items-center justify-between gap-4 text-[8px] text-slate-450 dark:text-slate-500 font-bold font-mono">
 
-          <span>© 2025 DRIVELEGAL. All rights reserved.</span>
+          <span>© 2025 DRIVOS. All rights reserved.</span>
 
           <span className="text-right">Not affiliated with any government body. For awareness and educational use.</span>
         </div>
@@ -1095,7 +1476,7 @@ export default function LandingScreen() {
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-white/15">
               <span className="font-heading font-extrabold text-sm tracking-wider uppercase text-slate-900 dark:text-white flex items-center gap-2">
 
-                {activeFooterTab === 'about' && 'About DRIVELEGAL'}
+                {activeFooterTab === 'about' && 'About DRIVOS'}
 
                 {activeFooterTab === 'privacy' && 'Privacy Policy'}
                 {activeFooterTab === 'terms' && 'Terms of Use'}
@@ -1115,9 +1496,9 @@ export default function LandingScreen() {
                 <div className="space-y-4 text-left">
                   <div className="p-4 bg-electric/5 border border-electric/15 rounded-2xl">
 
-                    <p className="text-slate-850 dark:text-white font-bold text-sm">DRIVELEGAL</p>
+                    <p className="text-slate-850 dark:text-white font-bold text-sm">DRIVOS</p>
                     <p className="mt-1 font-semibold leading-relaxed">
-                      DRIVELEGAL is an AI-powered traffic compliance platform built for Indian drivers and traffic authorities.
+                      DRIVOS is an AI-powered traffic compliance platform built for Indian drivers and traffic authorities.
 
                     </p>
                   </div>
@@ -1201,7 +1582,7 @@ export default function LandingScreen() {
                   </div>
                   <ul className="space-y-2.5 list-disc list-inside bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
 
-                    <li>DRIVELEGAL is for <strong>awareness and educational purposes only</strong></li>
+                    <li>DRIVOS is for <strong>awareness and educational purposes only</strong></li>
 
                     <li><strong>Not an official government service</strong></li>
                     <li><strong>Not affiliated</strong> with Parivahan, MoRTH, or any government body</li>
@@ -1226,7 +1607,7 @@ export default function LandingScreen() {
                     <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
                       <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">General Support</span>
 
-                      <p className="text-slate-850 dark:text-white font-bold">Email: support@DRIVELEGAL.in</p>
+                      <p className="text-slate-850 dark:text-white font-bold">Email: support@drivos.in</p>
 
                       <p>Phone: +91 XXXXX XXXXX</p>
                       <p className="text-[8.5px] text-electric font-bold mt-1">Response time: Within 24 hours</p>
@@ -1234,7 +1615,7 @@ export default function LandingScreen() {
                     <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
                       <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">Partnerships</span>
 
-                      <p className="text-slate-855 dark:text-white font-bold">partnerships@DRIVELEGAL.in</p>
+                      <p className="text-slate-855 dark:text-white font-bold">partnerships@drivos.in</p>
 
                       <p className="text-[8.5px] text-slate-450 mt-1">For Authority/Government inquiries</p>
                     </div>
@@ -1243,7 +1624,7 @@ export default function LandingScreen() {
                   <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 text-center">
                     <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400 mb-1">Press & Media</span>
 
-                    <p className="text-slate-850 dark:text-white font-bold">media@DRIVELEGAL.in</p>
+                    <p className="text-slate-850 dark:text-white font-bold">media@drivos.in</p>
 
                   </div>
                 </div>

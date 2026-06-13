@@ -478,7 +478,7 @@ export default function ProfileScreen() {
 
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-normal font-semibold">
 
-              Are you sure you want to securely log out of DRIVELEGAL? Your local VAHAN credentials sync settings will remain preserved in your secure local session keys.
+              Are you sure you want to securely log out of DRIVOS? Your local VAHAN credentials sync settings will remain preserved in your secure local session keys.
 
             </p>
 

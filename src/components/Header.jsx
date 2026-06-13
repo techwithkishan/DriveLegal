@@ -53,12 +53,11 @@ export default function Header() {
         >
 
           <div className="rounded-xl overflow-hidden shadow-lg shadow-electric/20 group-hover:scale-105 transition-transform duration-300 w-8 h-8 shrink-0">
-            <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL Logo" className="w-full h-full object-cover" />
+            <img src="/drivelegal-logo.jpg" alt="DRIVOS Logo" className="w-full h-full object-cover" />
           </div>
           <div className={activeScreen !== 'dashboard' ? 'hidden xs:block' : 'block'}>
             <span className="font-heading font-extrabold text-sm xs:text-base tracking-wide bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent whitespace-nowrap">
-              DRIVELEGAL
-
+              DRIVOS
             </span>
           </div>
         </div>

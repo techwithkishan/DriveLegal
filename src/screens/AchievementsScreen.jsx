@@ -12,7 +12,7 @@ const VisionBanner = ({ partial }) => (
         {partial
           ? 'The Leaderboard and Rewards sections below are future vision items. Badge tracking and streak counter are live.'
 
-          : 'These screens showcase DRIVELEGAL\'s future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.'}
+          : 'These screens showcase DRIVOS\'s future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.'}
 
       </p>
     </div>
@@ -174,7 +174,7 @@ export default function AchievementsScreen() {
             { icon: '🛡️', text: 'Insurance discount eligibility (subject to insurer partnerships)' },
             { icon: '🏛️', text: 'Priority lane at RTO offices (subject to authority adoption)' },
 
-            { icon: '⚡', text: 'DRIVELEGAL Pro plan discount' },
+            { icon: '⚡', text: 'DRIVOS Pro plan discount' },
 
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">

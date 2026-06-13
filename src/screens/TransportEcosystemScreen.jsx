@@ -90,7 +90,7 @@ export default function TransportEcosystemScreen() {
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-md mx-auto">
 
-          DRIVELEGAL's core penalty intelligence layer scales to secure compliance across all major fields of transport.
+          DRIVOS's core penalty intelligence layer scales to secure compliance across all major fields of transport.
 
         </p>
       </div>
@@ -165,7 +165,7 @@ export default function TransportEcosystemScreen() {
               <span className="flex items-center gap-1">
                 <Sparkles className="w-2.5 h-2.5 text-electric-glow animate-pulse" />
 
-                DRIVELEGAL AI ENGINE
+                DRIVOS AI ENGINE
 
               </span>
               <span>•</span>
@@ -212,7 +212,7 @@ export default function TransportEcosystemScreen() {
               <div className="flex items-start gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-electric shrink-0 mt-0.5" />
 
-                <span>**Unified Context Layer:** The same proprietary DRIVELEGAL AI technology powers all transport dimensions.</span>
+                <span>**Unified Context Layer:** The same proprietary DRIVOS AI technology powers all transport dimensions.</span>
 
               </div>
             </div>

@@ -65,9 +65,9 @@ const modules = [
 const civicPrograms = [
   { emoji: '🏫', title: 'School Awareness Program', desc: 'Age-appropriate road safety modules for school students. Covers: pedestrian safety, cycle safety, why traffic rules matter.', status: 'Architecture planned.' },
 
-  { emoji: '👮', title: 'Traffic Police Training Aid', desc: 'Officers use DRIVELEGAL\'s database for citizen awareness drives and public education booths.', status: 'Proposal stage.' },
-  { emoji: '🚗', title: 'New Driver Onboarding', desc: 'Learner licence holders complete DRIVELEGAL awareness modules as part of driving school curriculum.', status: 'Partnership model designed.' },
-  { emoji: '📻', title: 'Public Awareness Campaigns', desc: 'DRIVELEGAL data feeds into state-level road safety reports used for campaign planning.', status: 'Data model ready (Phase 6).' },
+  { emoji: '👮', title: 'Traffic Police Training Aid', desc: 'Officers use DRIVOS\'s database for citizen awareness drives and public education booths.', status: 'Proposal stage.' },
+  { emoji: '🚗', title: 'New Driver Onboarding', desc: 'Learner licence holders complete DRIVOS awareness modules as part of driving school curriculum.', status: 'Partnership model designed.' },
+  { emoji: '📻', title: 'Public Awareness Campaigns', desc: 'DRIVOS data feeds into state-level road safety reports used for campaign planning.', status: 'Data model ready (Phase 6).' },
 
 ];
 

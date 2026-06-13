@@ -10,7 +10,7 @@ const VisionBanner = () => (
       <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
       <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
 
-        These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+        These screens showcase DRIVOS's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
 
       </p>
     </div>

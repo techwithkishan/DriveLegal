@@ -77,7 +77,7 @@ export default function TravelAlertScreen() {
               </h4>
               <p className="text-[11px] text-cyan-50/90 leading-relaxed mt-1.5 font-medium">
 
-                DRIVELEGAL has auto-detected your entry into Goa. We've compiled the region-specific checklist and strict compliance differences for you below!
+                DRIVOS has auto-detected your entry into Goa. We've compiled the region-specific checklist and strict compliance differences for you below!
 
               </p>
             </div>

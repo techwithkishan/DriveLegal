@@ -18,7 +18,7 @@ export default function SmartAwarenessReportScreen() {
 
   const handleShare = () => {
 
-    navigator.clipboard.writeText("https://DRIVELEGAL.gov.in/reports/may-2025-compliance");
+    navigator.clipboard.writeText("https://DRIVOS.gov.in/reports/may-2025-compliance");
 
     showToast("Report Link copied to clipboard!");
   };
@@ -158,7 +158,7 @@ export default function SmartAwarenessReportScreen() {
           {/* RTO stamp stamp mark layout */}
           <div className="text-[7px] text-right font-extrabold text-slate-400/50 mt-4 leading-none select-none tracking-widest">
 
-            DRIVELEGAL SECURE RTO SYSTEM
+            DRIVOS SECURE RTO SYSTEM
 
           </div>
 

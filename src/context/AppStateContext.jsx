@@ -133,7 +133,7 @@ export const AppStateProvider = ({ children }) => {
         try {
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`,
-            { headers: { 'Accept-Language': 'en', 'User-Agent': 'DRIVELEGAL-App/1.0' } }
+            { headers: { 'Accept-Language': 'en', 'User-Agent': 'DRIVOS-App/1.0' } }
           );
 
           if (!response.ok) throw new Error('Reverse geocoding failed');

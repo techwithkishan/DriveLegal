@@ -292,7 +292,7 @@ export default function InsightsScreen() {
           </h2>
           <p className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
 
-            Powered by DRIVELEGAL AI
+            Powered by DRIVOS AI
 
           </p>
         </div>

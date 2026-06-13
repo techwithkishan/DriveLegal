@@ -185,7 +185,7 @@ function AppContent() {
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-slate-950 animate-pulse shrink-0" />
 
-            <span>GOVERNANCE MODE — DRIVELEGAL ADMIN</span>
+            <span>GOVERNANCE MODE — DRIVOS ADMIN</span>
 
           </div>
           <button 

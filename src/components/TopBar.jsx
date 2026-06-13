@@ -82,7 +82,7 @@ export default function TopBar() {
         return 'Enforcement System Audit';
       default:
 
-        return 'DRIVELEGAL Portal';
+        return 'DRIVOS Portal';
 
     }
   };

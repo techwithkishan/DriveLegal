@@ -9,7 +9,7 @@ const NODES = {
     id: 'core',
     emoji: '🛡️',
 
-    label: 'DRIVELEGAL\nCore Engine',
+    label: 'DRIVOS\nCore Engine',
 
     status: 'live',
     desc: 'The central intelligence layer powering all citizen, authority, and mobility features across the platform.',
@@ -207,7 +207,7 @@ export default function EcosystemScreen() {
           <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
           <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
 
-            These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
+            These screens showcase DRIVOS's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
 
           </p>
         </div>
@@ -218,7 +218,7 @@ export default function EcosystemScreen() {
         <div className="flex items-center gap-2">
           <Globe className="w-5 h-5 text-electric" />
 
-          <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DRIVELEGAL Ecosystem</h1>
+          <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DRIVOS Ecosystem</h1>
 
         </div>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">The intelligent mobility compliance platform of tomorrow</p>
