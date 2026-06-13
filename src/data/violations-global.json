@@ -1,0 +1,222 @@
+{
+  "No Helmet": {
+    "IN": {
+      "fine": 1000,
+      "section": "Section 129, MV Act 2019",
+      "extra": "Driving license disqualification for 3 months may apply.",
+      "points": "None",
+      "severity": "MEDIUM"
+    },
+    "AE": {
+      "fine": 500,
+      "section": "Article 49, UAE Federal Traffic Law",
+      "extra": "+ 4 Black Points added to licence",
+      "points": "4 Points",
+      "severity": "HIGH"
+    },
+    "GB": {
+      "fine": 50,
+      "section": "Road Traffic Act 1988",
+      "extra": "Fixed Penalty Notice (FPN)",
+      "points": "None",
+      "severity": "LOW"
+    },
+    "US": {
+      "fine": 250,
+      "section": "CVC Section 27803 (California example)",
+      "extra": "+ Court fees may apply",
+      "points": "None",
+      "severity": "MEDIUM"
+    },
+    "DE": {
+      "fine": 15,
+      "section": "§21a StVO",
+      "extra": "Helmet advisory only for cyclists, mandatory for motorbikes",
+      "points": "None",
+      "severity": "LOW"
+    },
+    "AU": {
+      "fine": 287,
+      "section": "State Road Rules (Queensland example)",
+      "extra": "Immediate double demerit potential",
+      "points": "3 Points",
+      "severity": "HIGH"
+    }
+  },
+  "Over-speeding": {
+    "IN": {
+      "fine": 1500,
+      "section": "Section 183, MV Act 2019",
+      "extra": "LMV speeding fine. License impounded on subsequent offenses.",
+      "points": "None",
+      "severity": "MEDIUM"
+    },
+    "AE": {
+      "fine": 600,
+      "section": "Article 71-78, UAE Federal Traffic Law",
+      "extra": "Impoundment of vehicle up to 30 days for extreme speeds.",
+      "points": "4 to 23 Points",
+      "severity": "HIGH"
+    },
+    "GB": {
+      "fine": 100,
+      "section": "Road Traffic Regulation Act 1984",
+      "extra": "Min 3 penalty points on licence.",
+      "points": "3 Points",
+      "severity": "MEDIUM"
+    },
+    "US": {
+      "fine": 360,
+      "section": "VC Section 22350 (California)",
+      "extra": "1 point on driving record.",
+      "points": "1 Point",
+      "severity": "HIGH"
+    },
+    "DE": {
+      "fine": 70,
+      "section": "BKatV (German Fine Catalog)",
+      "extra": "No points below 21 km/h over limit.",
+      "points": "None",
+      "severity": "LOW"
+    },
+    "AU": {
+      "fine": 410,
+      "section": "Road Safety Act 1986 (Victoria)",
+      "extra": "3 demerit points and suspension potential.",
+      "points": "3 Points",
+      "severity": "HIGH"
+    }
+  },
+  "No Insurance": {
+    "IN": {
+      "fine": 2000,
+      "section": "Section 196, MV Act 2019",
+      "extra": "Imprisonment up to 3 months may apply.",
+      "points": "None",
+      "severity": "HIGH"
+    },
+    "AE": {
+      "fine": 500,
+      "section": "Article 96, UAE Federal Traffic Law",
+      "extra": "Vehicle impounded for 7 days.",
+      "points": "4 Points",
+      "severity": "HIGH"
+    },
+    "GB": {
+      "fine": 300,
+      "section": "Road Traffic Act 1988, S. 143",
+      "extra": "6 penalty points and vehicle seizure.",
+      "points": "6 Points",
+      "severity": "HIGH"
+    },
+    "US": {
+      "fine": 500,
+      "section": "Vehicle Code 16028 (California)",
+      "extra": "Dismissible if proof provided to court.",
+      "points": "None",
+      "severity": "MEDIUM"
+    },
+    "DE": {
+      "fine": 250,
+      "section": "§6 PflVG (Compulsory Insurance Act)",
+      "extra": "Criminal offense, up to 1 year prison.",
+      "points": "None",
+      "severity": "HIGH"
+    },
+    "AU": {
+      "fine": 1600,
+      "section": "Motor Accidents Act (NSW)",
+      "extra": "Unregistered vehicle tax fine holds apply.",
+      "points": "None",
+      "severity": "HIGH"
+    }
+  },
+  "Mobile While Driving": {
+    "IN": {
+      "fine": 1500,
+      "section": "Section 184, MV Act 2019",
+      "extra": "Classed as dangerous driving.",
+      "points": "None",
+      "severity": "HIGH"
+    },
+    "AE": {
+      "fine": 800,
+      "section": "Article 104, UAE Federal Traffic Law",
+      "extra": "+ 4 black points on license.",
+      "points": "4 Points",
+      "severity": "HIGH"
+    },
+    "GB": {
+      "fine": 200,
+      "section": "Road Traffic Act 1988, S. 41D",
+      "extra": "6 penalty points and possible court fine up to £1,000.",
+      "points": "6 Points",
+      "severity": "HIGH"
+    },
+    "US": {
+      "fine": 162,
+      "section": "VC Section 23123 (California)",
+      "extra": "Hands-free devices allowed for adults.",
+      "points": "None",
+      "severity": "MEDIUM"
+    },
+    "DE": {
+      "fine": 100,
+      "section": "§23 StVO",
+      "extra": "+ 1 point in Flensburg register.",
+      "points": "1 Point",
+      "severity": "MEDIUM"
+    },
+    "AU": {
+      "fine": 552,
+      "section": "Road Rules 2014 (NSW)",
+      "extra": "+ 5 demerit points.",
+      "points": "5 Points",
+      "severity": "HIGH"
+    }
+  },
+  "Drunk Driving": {
+    "IN": {
+      "fine": 10000,
+      "section": "Section 185, MV Act 2019",
+      "extra": "BAC > 0.03%. Arrest without warrant allowed.",
+      "points": "None",
+      "severity": "HIGH"
+    },
+    "AE": {
+      "fine": 20000,
+      "section": "Article 10, UAE Federal Traffic Law",
+      "extra": "Zero tolerance. Court decides fine and prison.",
+      "points": "24 Points",
+      "severity": "HIGH"
+    },
+    "GB": {
+      "fine": 5000,
+      "section": "Road Traffic Act 1988, S. 5",
+      "extra": "Min 12-month driving ban + prison potential.",
+      "points": "10 Points",
+      "severity": "HIGH"
+    },
+    "US": {
+      "fine": 1000,
+      "section": "VC Section 23152 (California)",
+      "extra": "Mandatory ignition interlock device (IID).",
+      "points": "2 Points",
+      "severity": "HIGH"
+    },
+    "DE": {
+      "fine": 500,
+      "section": "§24a StVG",
+      "extra": "+ 2 points and 1-month driving ban.",
+      "points": "2 Points",
+      "severity": "HIGH"
+    },
+    "AU": {
+      "fine": 1100,
+      "section": "Road Safety Act 1986 (Victoria)",
+      "extra": "Immediate license cancellation for 6 months.",
+      "points": "10 demerits",
+      "severity": "HIGH"
+    }
+  }
+}

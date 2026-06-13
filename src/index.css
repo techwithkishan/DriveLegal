@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-navy-950 dark:text-slate-100 font-body antialiased transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Theme Adaptive Glassmorphism classes */
+.glass-panel {
+  @apply bg-white/75 dark:bg-white/5 border border-slate-200/80 dark:border-white/10 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300;
+}
+
+.glass-panel-light {
+  @apply bg-slate-100/70 dark:bg-slate-900/40 border border-slate-200/60 dark:border-white/5 backdrop-blur-md rounded-2xl shadow-xl transition-all duration-300;
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-white/5 border border-slate-200/60 dark:border-white/10 backdrop-blur-lg hover:bg-white/90 dark:hover:bg-white/10 hover:border-slate-300/80 dark:hover:border-white/20 transition-all duration-300;
+}
+
+.glass-card-active {
+  @apply bg-white/95 dark:bg-white/10 border border-electric/40 dark:border-electric/50 backdrop-blur-lg shadow-lg shadow-electric/10 dark:shadow-electric/20;
+}
+
+.glass-modal {
+  @apply bg-white/95 dark:bg-navy-900/90 border border-slate-200 dark:border-white/10 backdrop-blur-xl rounded-2xl shadow-2xl;
+}
+
+/* Glow effects */
+.glow-electric {
+  box-shadow: 0 0 15px -3px rgba(59, 130, 246, 0.4);
+}
+
+.glow-electric-lg {
+  box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.6);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px -3px rgba(239, 68, 68, 0.4);
+}
+
+.glow-amber {
+  box-shadow: 0 0 15px -3px rgba(245, 158, 11, 0.4);
+}
+
+.glow-green {
+  box-shadow: 0 0 15px -3px rgba(16, 185, 129, 0.4);
+}
+
+/* Responsive view container limits - Theme Adaptive */
+.app-container {
+  @apply w-full max-w-md md:max-w-2xl lg:max-w-5xl xl:max-w-7xl mx-auto min-h-screen bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 flex flex-col lg:flex-row relative lg:overflow-hidden pb-24 lg:pb-0 shadow-2xl lg:border-x border-slate-200 dark:border-white/5 transition-all duration-300;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-navy-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-white/10 rounded-full hover:bg-slate-400 dark:hover:bg-white/20;
+}
+
+/* Micro-animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.bg-glow-pulse {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
