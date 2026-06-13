@@ -1,10 +1,7 @@
-<<<<<<< HEAD
+
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { DEMO_USER, HISTORICAL_CHALLANS, MOCK_SAFETY_SCORE, TRAVEL_RULES } from '../data/demoData';
-=======
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { DEMO_USER, HISTORICAL_CHALLANS, MOCK_SAFETY_SCORE } from '../data/demoData';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 
 const AppStateContext = createContext();
 
@@ -62,59 +59,47 @@ export const AppStateProvider = ({ children }) => {
 
   // Theme: Dark/Light Mode state
   const [theme, setTheme] = useState(() => {
-<<<<<<< HEAD
-    const savedTheme = localStorage.getItem('DriVos_theme');
-=======
-    const savedTheme = localStorage.getItem('drivelegal_theme');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const savedTheme = localStorage.getItem('DRIVELEGAL_theme');
+
     return savedTheme ? savedTheme : 'dark';
   });
 
   // Authentication & Login Method State
   const [user, setUser] = useState(() => {
-<<<<<<< HEAD
-    const savedUser = localStorage.getItem('DriVos_user');
-=======
-    const savedUser = localStorage.getItem('drivelegal_user');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const savedUser = localStorage.getItem('DRIVELEGAL_user');
+
     return savedUser ? JSON.parse(savedUser) : null;
   });
 
   const [loginMethod, setLoginMethod] = useState(() => {
-<<<<<<< HEAD
-    return localStorage.getItem('DriVos_login_method') || 'phone'; // phone, vehicle, licence
-=======
-    return localStorage.getItem('drivelegal_login_method') || 'phone'; // phone, vehicle, licence
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    return localStorage.getItem('DRIVELEGAL_login_method') || 'phone'; // phone, vehicle, licence
+
   });
 
   // Registered Vehicles State (Phase 2 with types and states)
   const [vehicles, setVehicles] = useState(() => {
-<<<<<<< HEAD
-    const savedVehicles = localStorage.getItem('DriVos_vehicles_v2');
-=======
-    const savedVehicles = localStorage.getItem('drivelegal_vehicles_v2');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const savedVehicles = localStorage.getItem('DRIVELEGAL_vehicles_v2');
+
     return savedVehicles ? JSON.parse(savedVehicles) : DEMO_USER.vehicles;
   });
 
   // Historical Challans State (allows pay/dispute)
   const [challans, setChallans] = useState(() => {
-<<<<<<< HEAD
-    const savedChallans = localStorage.getItem('DriVos_challans');
-=======
-    const savedChallans = localStorage.getItem('drivelegal_challans');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const savedChallans = localStorage.getItem('DRIVELEGAL_challans');
+
     return savedChallans ? JSON.parse(savedChallans) : HISTORICAL_CHALLANS;
   });
 
   // Compliance Score State
   const [safetyScore, setSafetyScore] = useState(() => {
-<<<<<<< HEAD
-    const savedScore = localStorage.getItem('DriVos_score_v2');
-=======
-    const savedScore = localStorage.getItem('drivelegal_score_v2');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const savedScore = localStorage.getItem('DRIVELEGAL_score_v2');
+
     return savedScore ? JSON.parse(savedScore) : MOCK_SAFETY_SCORE;
   });
 
@@ -127,7 +112,7 @@ export const AppStateProvider = ({ children }) => {
     isAutoDetected: false
   });
 
-<<<<<<< HEAD
+
   // Location detection loading/error states
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationError, setLocationError] = useState(null);
@@ -148,7 +133,7 @@ export const AppStateProvider = ({ children }) => {
         try {
           const response = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&addressdetails=1`,
-            { headers: { 'Accept-Language': 'en', 'User-Agent': 'DriVos-App/1.0' } }
+            { headers: { 'Accept-Language': 'en', 'User-Agent': 'DRIVELEGAL-App/1.0' } }
           );
 
           if (!response.ok) throw new Error('Reverse geocoding failed');
@@ -225,27 +210,20 @@ export const AppStateProvider = ({ children }) => {
     detectLocation();
   }, []);
 
-=======
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
   // Offline & Travel Simulation States
   const [isOffline, setIsOffline] = useState(false);
   const [isTravelModeSimulated, setIsTravelModeSimulated] = useState(false);
 
   // Admin Mode state
   const [isAdminMode, setIsAdminMode] = useState(() => {
-<<<<<<< HEAD
-    return localStorage.getItem('DriVos_admin_mode') === 'true';
+
+    return localStorage.getItem('DRIVELEGAL_admin_mode') === 'true';
   });
 
   useEffect(() => {
-    localStorage.setItem('DriVos_admin_mode', isAdminMode.toString());
-=======
-    return localStorage.getItem('drivelegal_admin_mode') === 'true';
-  });
+    localStorage.setItem('DRIVELEGAL_admin_mode', isAdminMode.toString());
 
-  useEffect(() => {
-    localStorage.setItem('drivelegal_admin_mode', isAdminMode.toString());
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   }, [isAdminMode]);
 
   // Apply dark class to <html> tag
@@ -258,58 +236,38 @@ export const AppStateProvider = ({ children }) => {
       root.classList.add('light');
       root.classList.remove('dark');
     }
-<<<<<<< HEAD
-    localStorage.setItem('DriVos_theme', theme);
-=======
-    localStorage.setItem('drivelegal_theme', theme);
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    localStorage.setItem('DRIVELEGAL_theme', theme);
+
   }, [theme]);
 
   // Sync state variables with local storage
   useEffect(() => {
     if (user) {
-<<<<<<< HEAD
-      localStorage.setItem('DriVos_user', JSON.stringify(user));
+
+      localStorage.setItem('DRIVELEGAL_user', JSON.stringify(user));
     } else {
-      localStorage.removeItem('DriVos_user');
-=======
-      localStorage.setItem('drivelegal_user', JSON.stringify(user));
-    } else {
-      localStorage.removeItem('drivelegal_user');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+      localStorage.removeItem('DRIVELEGAL_user');
+
     }
   }, [user]);
 
   useEffect(() => {
-<<<<<<< HEAD
-    localStorage.setItem('DriVos_login_method', loginMethod);
+
+    localStorage.setItem('DRIVELEGAL_login_method', loginMethod);
   }, [loginMethod]);
 
   useEffect(() => {
-    localStorage.setItem('DriVos_vehicles_v2', JSON.stringify(vehicles));
+    localStorage.setItem('DRIVELEGAL_vehicles_v2', JSON.stringify(vehicles));
   }, [vehicles]);
 
   useEffect(() => {
-    localStorage.setItem('DriVos_challans', JSON.stringify(challans));
+    localStorage.setItem('DRIVELEGAL_challans', JSON.stringify(challans));
   }, [challans]);
 
   useEffect(() => {
-    localStorage.setItem('DriVos_score_v2', JSON.stringify(safetyScore));
-=======
-    localStorage.setItem('drivelegal_login_method', loginMethod);
-  }, [loginMethod]);
+    localStorage.setItem('DRIVELEGAL_score_v2', JSON.stringify(safetyScore));
 
-  useEffect(() => {
-    localStorage.setItem('drivelegal_vehicles_v2', JSON.stringify(vehicles));
-  }, [vehicles]);
-
-  useEffect(() => {
-    localStorage.setItem('drivelegal_challans', JSON.stringify(challans));
-  }, [challans]);
-
-  useEffect(() => {
-    localStorage.setItem('drivelegal_score_v2', JSON.stringify(safetyScore));
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
   }, [safetyScore]);
 
   const toggleTheme = () => {
@@ -321,11 +279,9 @@ export const AppStateProvider = ({ children }) => {
     setLoginMethod(method);
     
     // Check if user already exists
-<<<<<<< HEAD
-    const existing = localStorage.getItem('DriVos_user');
-=======
-    const existing = localStorage.getItem('drivelegal_user');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    const existing = localStorage.getItem('DRIVELEGAL_user');
+
     if (existing) {
       setUser(JSON.parse(existing));
       setActiveScreen('dashboard');
@@ -345,11 +301,9 @@ export const AppStateProvider = ({ children }) => {
         { plate: defaultProfile.primaryVehicle, type: 'Car', state: defaultProfile.registeredState },
         { plate: 'KA01AB1234', type: 'Bike', state: defaultProfile.registeredState }
       ]);
-<<<<<<< HEAD
-      localStorage.removeItem('DriVos_tour_completed');
-=======
-      localStorage.removeItem('drivelegal_tour_completed');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+      localStorage.removeItem('DRIVELEGAL_tour_completed');
+
       setActiveScreen('dashboard');
     }
   };
@@ -368,11 +322,9 @@ export const AppStateProvider = ({ children }) => {
     setVehicles([
       { plate: newUser.primaryVehicle, type: 'Car', state: newUser.registeredState }
     ]);
-<<<<<<< HEAD
-    localStorage.removeItem('DriVos_tour_completed');
-=======
-    localStorage.removeItem('drivelegal_tour_completed');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    localStorage.removeItem('DRIVELEGAL_tour_completed');
+
     setActiveScreen('dashboard');
   };
 
@@ -412,11 +364,9 @@ export const AppStateProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-<<<<<<< HEAD
-    localStorage.removeItem('DriVos_user');
-=======
-    localStorage.removeItem('drivelegal_user');
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    localStorage.removeItem('DRIVELEGAL_user');
+
     window.scrollTo({ top: 0, behavior: 'instant' });
     setActiveScreen('splash');
   };
@@ -515,14 +465,13 @@ export const AppStateProvider = ({ children }) => {
   const currentLocationState = location.state;
   const isTravelActive = isTravelModeSimulated || (user && registeredState !== currentLocationState);
 
-<<<<<<< HEAD
+
   const getTravelRules = () => {
     const currentState = location.state || "Karnataka";
     return TRAVEL_RULES[currentState] || TRAVEL_RULES["Karnataka"];
   };
 
-=======
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
   return (
     <AppStateContext.Provider value={{
       activeScreen,
@@ -556,21 +505,19 @@ export const AppStateProvider = ({ children }) => {
       // Simulation/Parameters
       location,
       setLocation,
-<<<<<<< HEAD
+
       locationLoading,
       locationError,
       detectLocation,
-=======
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
       isOffline,
       setIsOffline,
       isTravelModeSimulated,
       setIsTravelModeSimulated,
       isTravelActive,
-<<<<<<< HEAD
+
       getTravelRules,
-=======
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 
       // Admin Mode
       isAdminMode,

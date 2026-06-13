@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { Info, Bot, TrendingUp, CheckSquare, Square } from 'lucide-react';
 
 const VisionBanner = () => (
@@ -11,11 +9,9 @@ const VisionBanner = () => (
     <div>
       <p className="text-[10px] font-extrabold text-blue-400 uppercase tracking-widest">Vision Layer</p>
       <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed mt-0.5">
-<<<<<<< HEAD
-        These screens showcase DriVos's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
-=======
+
         These screens showcase DRIVELEGAL's future ecosystem architecture. Core features (Phases 1–7) are fully functional. Phase 8 demonstrates scalability and long-term product vision.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
       </p>
     </div>
   </div>

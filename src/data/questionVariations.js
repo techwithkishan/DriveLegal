@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-﻿// Automatically generated from DriVos_Large_Variations_Dataset.xlsx (356 entries)
-=======
-// Automatically generated from DriveLegal_Large_Variations_Dataset.xlsx (356 entries)
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+﻿// Automatically generated from DRIVELEGAL_Large_Variations_Dataset.xlsx (356 entries)
+
 
 export const QUESTION_VARIATIONS = [
   {

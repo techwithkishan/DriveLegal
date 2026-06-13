@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState, useEffect, useRef } from 'react';
-=======
-import React, { useState, useEffect, useRef } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { Info, BookOpen, ChevronDown, ChevronUp, CheckCircle } from 'lucide-react';
 
 const VisionBanner = () => (
@@ -66,15 +64,11 @@ const modules = [
 
 const civicPrograms = [
   { emoji: '🏫', title: 'School Awareness Program', desc: 'Age-appropriate road safety modules for school students. Covers: pedestrian safety, cycle safety, why traffic rules matter.', status: 'Architecture planned.' },
-<<<<<<< HEAD
-  { emoji: '👮', title: 'Traffic Police Training Aid', desc: 'Officers use DriVos\'s database for citizen awareness drives and public education booths.', status: 'Proposal stage.' },
-  { emoji: '🚗', title: 'New Driver Onboarding', desc: 'Learner licence holders complete DriVos awareness modules as part of driving school curriculum.', status: 'Partnership model designed.' },
-  { emoji: '📻', title: 'Public Awareness Campaigns', desc: 'DriVos data feeds into state-level road safety reports used for campaign planning.', status: 'Data model ready (Phase 6).' },
-=======
+
   { emoji: '👮', title: 'Traffic Police Training Aid', desc: 'Officers use DRIVELEGAL\'s database for citizen awareness drives and public education booths.', status: 'Proposal stage.' },
   { emoji: '🚗', title: 'New Driver Onboarding', desc: 'Learner licence holders complete DRIVELEGAL awareness modules as part of driving school curriculum.', status: 'Partnership model designed.' },
   { emoji: '📻', title: 'Public Awareness Campaigns', desc: 'DRIVELEGAL data feeds into state-level road safety reports used for campaign planning.', status: 'Data model ready (Phase 6).' },
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 ];
 
 const impactNumbers = [

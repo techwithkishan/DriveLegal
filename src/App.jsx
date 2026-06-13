@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React from 'react';
-=======
-import React from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { AppStateProvider, useAppState } from './context/AppStateContext';
 
 // Layout & Components
@@ -186,11 +184,9 @@ function AppContent() {
         <div className="w-full bg-amber-500 text-slate-950 px-4 py-2 font-bold text-xs flex items-center justify-between shadow-md relative z-50 shrink-0">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-slate-950 animate-pulse shrink-0" />
-<<<<<<< HEAD
-            <span>GOVERNANCE MODE — DriVos ADMIN</span>
-=======
+
             <span>GOVERNANCE MODE — DRIVELEGAL ADMIN</span>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           </div>
           <button 
             onClick={() => {

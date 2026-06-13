@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿export const LANGUAGES = [
-=======
-export const LANGUAGES = [
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
   { id: 'en', name: 'English', native: 'English' },
   { id: 'hi', name: 'Hindi', native: 'हिन्दी' },
   { id: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
@@ -108,11 +106,9 @@ const CORE_UI_TRANSLATIONS = {
     en: "🌐 Ecosystem", hi: "🌐 पारिस्थितिकी तंत्र", kn: "🌐 ಪರಿಸರ ವ್ಯವಸ್ಥೆ", te: "🌐 ఇకోసిస్టమ్", ta: "🌐 சுற்றுச்சூழல் அமைப்பு", ml: "🌐 ഇക്കോസിസ്റ്റം", mr: "🌐 इकोसिस्टम", gu: "🌐 ઇકોસિસ્ટમ", bn: "🌐 ইকোসিস্টেম", pa: "🌐 ਈਕੋਸਿਸਟਮ", or: "🌐 ଇକୋସିଷ୍ଟମ", ur: "🌐 ایکو سسٹم", as: "🌐 পৰিস্থিতিতন্ত্ৰ", sa: "🌐 परिस्थितिः तन्त्रम्", ks: "🌐 ایکو سسٹم", ne: "🌐 इकोसिस्टम", kk: "🌐 इकोसिस्टम", br: "🌐 इकोसिस्टम", dg: "🌐 इकोसिस्टम", mai: "🌐 इकोसिस्टम", mni: "🌐 ইকোসিস্টেম", sd: "🌐 ايڪو سسٽم", sat: "🌐 ᱤᱠᱳᱥᱤᱥᱴᱮᱢ"
   },
   newToApp: {
-<<<<<<< HEAD
-    en: "New to this application? Start an introduction to know about DriVos completely.",
-=======
-    en: "New to this application? Start an introduction to know about Drive Legal completely.",
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    en: "New to this application? Start an introduction to know about DRIVELEGAL completely.",
+
     hi: "इस एप्लिकेशन में नए हैं? ड्राइव लीगल को पूरी तरह से जानने के लिए एक परिचय शुरू करें।",
     kn: "ಈ ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಹೊಸಬರೇ? ಡ್ರೈವ್ ಲೀಗಲ್ ಅನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ತಿಳಿಯಲು ಪರಿಚಯವನ್ನು ಪ್ರಾರಂಭಿಸಿ.",
     te: "ఈ యాప్‌కు కొత్తా? డ్రైవ్ లీగల్ గురించి పూర్తిగా తెలుసుకోవడానికి ప్రయాణాన్ని ప్రారంభించండి.",

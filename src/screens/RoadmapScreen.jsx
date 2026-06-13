@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useEffect, useRef, useState } from 'react';
-=======
-import React, { useEffect, useRef, useState } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { Map } from 'lucide-react';
 
 const phases = [
@@ -174,11 +172,9 @@ export default function RoadmapScreen() {
       <div className="space-y-1">
         <div className="flex items-center gap-2">
           <Map className="w-5 h-5 text-electric" />
-<<<<<<< HEAD
-          <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DriVos Roadmap</h1>
-=======
+
           <h1 className="font-heading font-black text-xl text-slate-900 dark:text-white uppercase tracking-wider">DRIVELEGAL Roadmap</h1>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </div>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">From prototype to national platform</p>
       </div>
@@ -213,11 +209,9 @@ export default function RoadmapScreen() {
       <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-2xl p-4 text-center space-y-1">
         <p className="text-[10px] font-extrabold text-slate-600 dark:text-slate-300 uppercase tracking-wider">🚀 Join the Journey</p>
         <p className="text-[9px] text-slate-400 font-medium leading-relaxed">
-<<<<<<< HEAD
-          DriVos is built for scale. Every phase brings India's drivers closer to a zero-penalty, fully-compliant future.
-=======
+
           DRIVELEGAL is built for scale. Every phase brings India's drivers closer to a zero-penalty, fully-compliant future.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </p>
       </div>
     </div>

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { 
   ArrowLeft, FileText, Download, Share2, ClipboardList, Info, Bot, Check, InfoIcon
 } from 'lucide-react';
@@ -19,11 +17,9 @@ export default function SmartAwarenessReportScreen() {
   };
 
   const handleShare = () => {
-<<<<<<< HEAD
-    navigator.clipboard.writeText("https://DriVos.gov.in/reports/may-2025-compliance");
-=======
-    navigator.clipboard.writeText("https://drivelegal.gov.in/reports/may-2025-compliance");
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+    navigator.clipboard.writeText("https://DRIVELEGAL.gov.in/reports/may-2025-compliance");
+
     showToast("Report Link copied to clipboard!");
   };
 
@@ -161,11 +157,9 @@ export default function SmartAwarenessReportScreen() {
 
           {/* RTO stamp stamp mark layout */}
           <div className="text-[7px] text-right font-extrabold text-slate-400/50 mt-4 leading-none select-none tracking-widest">
-<<<<<<< HEAD
-            DriVos SECURE RTO SYSTEM
-=======
+
             DRIVELEGAL SECURE RTO SYSTEM
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           </div>
 
         </div>

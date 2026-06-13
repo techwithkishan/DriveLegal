@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { 
   User, CreditCard, Shield, MapPin, Plus, Trash2, 
   LogOut, ShieldAlert, BadgeInfo, Settings, RefreshCw, 
@@ -479,11 +477,9 @@ export default function ProfileScreen() {
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400 leading-normal font-semibold">
-<<<<<<< HEAD
-              Are you sure you want to securely log out of DriVos? Your local VAHAN credentials sync settings will remain preserved in your secure local session keys.
-=======
+
               Are you sure you want to securely log out of DRIVELEGAL? Your local VAHAN credentials sync settings will remain preserved in your secure local session keys.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </p>
 
             <div className="flex gap-3 pt-2">

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React from 'react';
-=======
-import React from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { 
   Shield, Info, Sparkles, Scale, BookOpen, MapPin, 
   Bot, Mic, ClipboardList, Award, Camera, WifiOff, 
@@ -86,11 +84,9 @@ export default function AboutScreen() {
           <span>Platform Profile</span>
         </div>
         <h1 className="text-2xl xs:text-3xl font-heading font-black text-slate-850 dark:text-white leading-tight">
-<<<<<<< HEAD
-          About DriVos
-=======
+
           About DRIVELEGAL
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </h1>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed max-w-md mx-auto">
           AI-Powered Traffic Law and Challan Intelligence Platform.
@@ -111,11 +107,9 @@ export default function AboutScreen() {
         </div>
 
         <p className="text-xs text-slate-650 dark:text-slate-300 font-semibold leading-relaxed">
-<<<<<<< HEAD
-          DriVos is an AI-powered traffic law and challan intelligence platform designed to simplify traffic regulations, improve road safety awareness, and help users understand challans in a smarter and more accessible way.
-=======
+
           DRIVELEGAL is an AI-powered traffic law and challan intelligence platform designed to simplify traffic regulations, improve road safety awareness, and help users understand challans in a smarter and more accessible way.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </p>
         
         <p className="text-xs text-slate-650 dark:text-slate-300 font-semibold leading-relaxed">
@@ -135,11 +129,9 @@ export default function AboutScreen() {
         </div>
         
         <p className="text-xs text-slate-650 dark:text-slate-300 font-semibold leading-relaxed">
-<<<<<<< HEAD
-          Unlike traditional challan platforms that mainly focus on payment or violation records, DriVos helps users understand:
-=======
+
           Unlike traditional challan platforms that mainly focus on payment or violation records, DRIVELEGAL helps users understand:
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[10px] font-bold text-slate-700 dark:text-slate-350">
@@ -210,11 +202,9 @@ export default function AboutScreen() {
           <div>
             <h5 className="text-[10px] font-black text-slate-800 dark:text-white uppercase tracking-wider">Citizen-First Approach</h5>
             <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-normal mt-0.5">
-<<<<<<< HEAD
-              DriVos is designed with a citizen-first approach to make traffic laws more transparent, understandable, and accessible for everyone.
-=======
+
               DRIVELEGAL is designed with a citizen-first approach to make traffic laws more transparent, understandable, and accessible for everyone.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </p>
           </div>
         </div>

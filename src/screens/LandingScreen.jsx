@@ -131,19 +131,13 @@ export default function LandingScreen() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo assembly */}
           <div className="flex items-center gap-2 cursor-pointer group" onClick={() => handleScrollToSection('hero-section')}>
-<<<<<<< HEAD
+
             <div className="rounded-xl overflow-hidden shadow-lg shadow-electric/25 group-hover:scale-105 transition-all w-9 h-9 shrink-0">
-              <img src="/drivos-logo.jpg" alt="DriVos" className="w-full h-full object-cover" />
-            </div>
-            <span className="font-heading font-black text-lg tracking-wider bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent uppercase leading-none">
-              DriVos
-=======
-            <div className="bg-gradient-to-tr from-electric to-blue-600 p-2 rounded-xl text-white shadow-lg shadow-electric/25 group-hover:scale-105 transition-all">
-              <Shield className="w-5 h-5 fill-white/10" />
+              <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL" className="w-full h-full object-cover" />
             </div>
             <span className="font-heading font-black text-lg tracking-wider bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent uppercase leading-none">
               DRIVELEGAL
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </span>
           </div>
 
@@ -327,20 +321,16 @@ export default function LandingScreen() {
         </div>
       </section>
 
-<<<<<<< HEAD
-      {/* SECTION 3 — WHAT IS DriVos */}
-=======
+
       {/* SECTION 3 — WHAT IS DRIVELEGAL */}
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
       <section id="what-is-section" className="py-20 px-6 max-w-7xl mx-auto w-full text-center scroll-mt-20">
         <div className="space-y-3 mb-12">
           <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Traffic Compliance Made Simple</span>
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
-<<<<<<< HEAD
-            What is DriVos?
-=======
+
             What is DRIVELEGAL?
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           </h2>
           <div className="w-12 h-1 bg-electric mx-auto rounded-full" />
         </div>
@@ -354,11 +344,9 @@ export default function LandingScreen() {
             </div>
             <h3 className="text-base font-extrabold text-slate-800 dark:text-white">Traffic Compliance Made Simple</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
-<<<<<<< HEAD
-              DriVos helps every Indian driver understand challan laws, check fines, and improve driving compliance — without needing a lawyer.
-=======
+
               DRIVELEGAL helps every Indian driver understand challan laws, check fines, and improve driving compliance — without needing a lawyer.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </p>
           </div>
 
@@ -382,11 +370,9 @@ export default function LandingScreen() {
             </div>
             <h3 className="text-base font-extrabold text-slate-800 dark:text-white">Prevention Over Penalty</h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
-<<<<<<< HEAD
-              Instead of just reacting to challans, DriVos helps you avoid them. Smart reminders, zone alerts, and personalized driving insights.
-=======
+
               Instead of just reacting to challans, DRIVELEGAL helps you avoid them. Smart reminders, zone alerts, and personalized driving insights.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </p>
           </div>
         </div>
@@ -398,11 +384,9 @@ export default function LandingScreen() {
         <div className="space-y-3 mb-16">
           <span className="text-[10px] text-electric font-black uppercase tracking-widest block font-sans">Four Simple Steps</span>
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
-<<<<<<< HEAD
-            How DriVos Works
-=======
+
             How DRIVELEGAL Works
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           </h2>
           <div className="w-12 h-1 bg-electric mx-auto rounded-full" />
         </div>
@@ -533,11 +517,9 @@ export default function LandingScreen() {
       <section id="demo-section" className="py-20 px-6 max-w-3xl mx-auto w-full text-center scroll-mt-20">
         
         <div className="space-y-3 mb-10">
-<<<<<<< HEAD
-          <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Experience DriVos Instantly</span>
-=======
+
           <span className="text-[10px] text-electric font-black uppercase tracking-widest block">Experience DRIVELEGAL Instantly</span>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           <h2 className="text-3xl font-heading font-black text-slate-850 dark:text-white">
             Try It Right Now — No Login Needed
           </h2>
@@ -862,11 +844,9 @@ export default function LandingScreen() {
                 Built for Authorities Too
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 font-semibold leading-relaxed">
-<<<<<<< HEAD
-                DriVos's governance layer gives traffic departments, RTOs, and civic agencies real-time violation analytics, zone heatmaps, and citizen compliance reports.
-=======
+
                 DRIVELEGAL's governance layer gives traffic departments, RTOs, and civic agencies real-time violation analytics, zone heatmaps, and citizen compliance reports.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
               </p>
               
               {/* Bullet checklist */}
@@ -952,11 +932,9 @@ export default function LandingScreen() {
           {/* Quote 1 */}
           <div className="glass-panel p-5.5 space-y-4 hover:scale-[1.01] transition-all flex flex-col justify-between">
             <p className="text-xs text-slate-550 dark:text-slate-400 font-semibold leading-relaxed italic">
-<<<<<<< HEAD
-              "I had no idea the fine for no insurance was ₹2,000 and that my accident claim would be void. DriVos explained it in 30 seconds."
-=======
+
               "I had no idea the fine for no insurance was ₹2,000 and that my accident claim would be void. DRIVELEGAL explained it in 30 seconds."
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </p>
             <div className="flex items-center justify-between border-t border-slate-150 dark:border-white/5 pt-3 text-[10px] font-bold">
               <div>
@@ -1047,11 +1025,9 @@ export default function LandingScreen() {
               <div className="bg-gradient-to-tr from-electric to-blue-600 p-1.5 rounded-lg text-white">
                 <Shield className="w-4 h-4 fill-white/10" />
               </div>
-<<<<<<< HEAD
-              <span className="font-heading font-black text-sm text-slate-850 dark:text-white tracking-widest">DriVos</span>
-=======
+
               <span className="font-heading font-black text-sm text-slate-850 dark:text-white tracking-widest">DRIVELEGAL</span>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </div>
             <p className="text-[9px] text-slate-450 dark:text-slate-500 font-bold leading-normal tracking-wide mt-2">
               Know Your Rights. Own The Road.<br />
@@ -1096,11 +1072,9 @@ export default function LandingScreen() {
 
         {/* Bottom bar */}
         <div className="max-w-7xl mx-auto w-full pt-8 mt-10 border-t border-slate-200 dark:border-slate-850/60 flex flex-wrap items-center justify-between gap-4 text-[8px] text-slate-450 dark:text-slate-500 font-bold font-mono">
-<<<<<<< HEAD
-          <span>© 2025 DriVos. All rights reserved.</span>
-=======
+
           <span>© 2025 DRIVELEGAL. All rights reserved.</span>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
           <span className="text-right">Not affiliated with any government body. For awareness and educational use.</span>
         </div>
       </footer>
@@ -1120,11 +1094,9 @@ export default function LandingScreen() {
             {/* Header */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-white/15">
               <span className="font-heading font-extrabold text-sm tracking-wider uppercase text-slate-900 dark:text-white flex items-center gap-2">
-<<<<<<< HEAD
-                {activeFooterTab === 'about' && 'About DriVos'}
-=======
+
                 {activeFooterTab === 'about' && 'About DRIVELEGAL'}
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
                 {activeFooterTab === 'privacy' && 'Privacy Policy'}
                 {activeFooterTab === 'terms' && 'Terms of Use'}
                 {activeFooterTab === 'support' && 'Contact Support'}
@@ -1142,15 +1114,11 @@ export default function LandingScreen() {
               {activeFooterTab === 'about' && (
                 <div className="space-y-4 text-left">
                   <div className="p-4 bg-electric/5 border border-electric/15 rounded-2xl">
-<<<<<<< HEAD
-                    <p className="text-slate-850 dark:text-white font-bold text-sm">DriVos</p>
-                    <p className="mt-1 font-semibold leading-relaxed">
-                      DriVos is an AI-powered traffic compliance platform built for Indian drivers and traffic authorities.
-=======
+
                     <p className="text-slate-850 dark:text-white font-bold text-sm">DRIVELEGAL</p>
                     <p className="mt-1 font-semibold leading-relaxed">
                       DRIVELEGAL is an AI-powered traffic compliance platform built for Indian drivers and traffic authorities.
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
                     </p>
                   </div>
                   <p>
@@ -1232,11 +1200,9 @@ export default function LandingScreen() {
                     </p>
                   </div>
                   <ul className="space-y-2.5 list-disc list-inside bg-slate-50 dark:bg-white/5 p-4 rounded-2xl border border-slate-200 dark:border-white/5">
-<<<<<<< HEAD
-                    <li>DriVos is for <strong>awareness and educational purposes only</strong></li>
-=======
+
                     <li>DRIVELEGAL is for <strong>awareness and educational purposes only</strong></li>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
                     <li><strong>Not an official government service</strong></li>
                     <li><strong>Not affiliated</strong> with Parivahan, MoRTH, or any government body</li>
                     <li>Challan data shown is for reference</li>
@@ -1259,32 +1225,26 @@ export default function LandingScreen() {
                   <div className="grid md:grid-cols-2 gap-3">
                     <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
                       <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">General Support</span>
-<<<<<<< HEAD
-                      <p className="text-slate-850 dark:text-white font-bold">Email: support@DriVos.in</p>
-=======
-                      <p className="text-slate-850 dark:text-white font-bold">Email: support@drivelegal.in</p>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+                      <p className="text-slate-850 dark:text-white font-bold">Email: support@DRIVELEGAL.in</p>
+
                       <p>Phone: +91 XXXXX XXXXX</p>
                       <p className="text-[8.5px] text-electric font-bold mt-1">Response time: Within 24 hours</p>
                     </div>
                     <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 space-y-1">
                       <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400">Partnerships</span>
-<<<<<<< HEAD
-                      <p className="text-slate-855 dark:text-white font-bold">partnerships@DriVos.in</p>
-=======
-                      <p className="text-slate-855 dark:text-white font-bold">partnerships@drivelegal.in</p>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+                      <p className="text-slate-855 dark:text-white font-bold">partnerships@DRIVELEGAL.in</p>
+
                       <p className="text-[8.5px] text-slate-450 mt-1">For Authority/Government inquiries</p>
                     </div>
                   </div>
 
                   <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/5 rounded-xl p-4 text-center">
                     <span className="block text-[8px] uppercase tracking-wider font-extrabold text-slate-400 mb-1">Press & Media</span>
-<<<<<<< HEAD
-                    <p className="text-slate-850 dark:text-white font-bold">media@DriVos.in</p>
-=======
-                    <p className="text-slate-850 dark:text-white font-bold">media@drivelegal.in</p>
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+                    <p className="text-slate-850 dark:text-white font-bold">media@DRIVELEGAL.in</p>
+
                   </div>
                 </div>
               )}

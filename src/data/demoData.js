@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-﻿// DriVos High-Fidelity Demo Data & Traffic Compliance Matrix (Phase 2)
-=======
-// DRIVELEGAL High-Fidelity Demo Data & Traffic Compliance Matrix (Phase 2)
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
+﻿// DRIVELEGAL High-Fidelity Demo Data & Traffic Compliance Matrix (Phase 2)
+
 
 export const DEMO_USER = {
   name: "Arjun Mehta",

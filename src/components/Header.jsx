@@ -51,21 +51,14 @@ export default function Header() {
           onClick={() => user && setActiveScreen('dashboard')} 
           className="flex items-center gap-1.5 cursor-pointer group"
         >
-<<<<<<< HEAD
+
           <div className="rounded-xl overflow-hidden shadow-lg shadow-electric/20 group-hover:scale-105 transition-transform duration-300 w-8 h-8 shrink-0">
-            <img src="/drivos-logo.jpg" alt="DriVos Logo" className="w-full h-full object-cover" />
-          </div>
-          <div className={activeScreen !== 'dashboard' ? 'hidden xs:block' : 'block'}>
-            <span className="font-heading font-extrabold text-sm xs:text-base tracking-wide bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent whitespace-nowrap">
-              DriVos
-=======
-          <div className="bg-gradient-to-tr from-electric to-blue-600 p-2 rounded-xl text-white shadow-lg shadow-electric/25 group-hover:scale-105 transition-transform duration-300">
-            <Shield className="w-4.5 h-4.5 fill-white/10" />
+            <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL Logo" className="w-full h-full object-cover" />
           </div>
           <div className={activeScreen !== 'dashboard' ? 'hidden xs:block' : 'block'}>
             <span className="font-heading font-extrabold text-sm xs:text-base tracking-wide bg-gradient-to-r from-slate-900 dark:from-white via-slate-700 dark:via-slate-200 to-electric bg-clip-text text-transparent whitespace-nowrap">
               DRIVELEGAL
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </span>
           </div>
         </div>

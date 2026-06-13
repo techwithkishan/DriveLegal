@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState, useRef, useEffect } from 'react';
-=======
-import React, { useState, useRef, useEffect } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { 
   Send, Bot, User, ShieldAlert, Sparkles, Scale, 
   RefreshCw, Mic, Volume2, Globe, ArrowRight, Play, BookOpen 
@@ -22,11 +20,9 @@ export default function AIScreen() {
     {
       id: 1,
       sender: 'bot',
-<<<<<<< HEAD
-      text: "Hello! I am your DriVos AI Companion. Ask me any traffic law questions, or tap one of the suggested chips below.",
-=======
+
       text: "Hello! I am your DRIVELEGAL AI Companion. Ask me any traffic law questions, or tap one of the suggested chips below.",
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
       isStructured: false,
       timestamp: new Date()
     }
@@ -586,11 +582,9 @@ export default function AIScreen() {
           </div>
           <div>
             <span className="text-xs font-bold text-slate-800 dark:text-white block uppercase tracking-wider">
-<<<<<<< HEAD
-              DriVos AI
-=======
+
               DRIVELEGAL AI
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </span>
             <span className="text-[8px] bg-electric/10 rounded-full px-2 py-0.5 mt-0.5 inline-block text-electric font-semibold uppercase">
               Powered by AI

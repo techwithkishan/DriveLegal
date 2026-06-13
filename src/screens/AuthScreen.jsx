@@ -160,27 +160,13 @@ export default function AuthScreen() {
 
       {/* Header section */}
       <div className="flex flex-col items-center mb-6 text-center">
-<<<<<<< HEAD
+
         <div className="rounded-2xl overflow-hidden shadow-lg transition-all duration-500 w-16 h-16 mx-auto">
-          <img src="/drivos-logo.jpg" alt="DriVos Logo" className="w-full h-full object-cover" />
-        </div>
-        <h2 className="font-heading font-extrabold text-2xl tracking-wider text-slate-800 dark:text-white">
-          {isAuthorityPortal ? 'DriVos RTO' : 'DriVos'}
-=======
-        <div className={`p-3.5 rounded-2xl text-white shadow-lg transition-all duration-500 ${
-          isAuthorityPortal 
-            ? 'bg-gradient-to-tr from-amber-500 to-orange-600 shadow-amber-500/20' 
-            : 'bg-gradient-to-tr from-electric to-blue-600 shadow-electric/25'
-        }`}>
-          {isAuthorityPortal ? (
-            <Building2 className="w-8 h-8 fill-white/10" />
-          ) : (
-            <Shield className="w-8 h-8 fill-white/10" />
-          )}
+          <img src="/drivelegal-logo.jpg" alt="DRIVELEGAL Logo" className="w-full h-full object-cover" />
         </div>
         <h2 className="font-heading font-extrabold text-2xl tracking-wider text-slate-800 dark:text-white">
           {isAuthorityPortal ? 'DRIVELEGAL RTO' : 'DRIVELEGAL'}
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
         </h2>
         <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
           {isAuthorityPortal 

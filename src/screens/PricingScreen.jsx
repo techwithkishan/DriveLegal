@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 ﻿import React, { useState } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
 import { 
   Check, CreditCard, Shield, Sparkles, Scale, Info, 
   ArrowLeft, Bell, Bot, Mic, Compass, FileText, ChevronDown, ChevronUp, AlertCircle, Lock,
@@ -528,11 +526,9 @@ export default function PricingScreen() {
             )}
 
             <div className="text-center text-[7px] text-slate-400 font-semibold uppercase tracking-wider flex items-center justify-center gap-1 mt-1">
-<<<<<<< HEAD
-              <Lock className="w-3.5 h-3.5" /> Powered by DriVos Secure Payments
-=======
+
               <Lock className="w-3.5 h-3.5" /> Powered by DRIVELEGAL Secure Payments
->>>>>>> c1e2c4bda0494e2524f91ead0514f9423976c5b1
+
             </div>
 
           </div>
