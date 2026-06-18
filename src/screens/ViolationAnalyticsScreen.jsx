@@ -57,22 +57,22 @@ export default function ViolationAnalyticsScreen() {
 
   // Section 2 Horizontal Bar Chart data
   const barData = [
-    { violation: 'Over-Speeding', count: 14200, color: '#f59e0b' },
-    { violation: 'No Helmet', count: 11800, color: '#d97706' },
-    { violation: 'Wrong Parking', count: 8400, color: '#b45309' },
-    { violation: 'Red Light Jump', count: 7100, color: '#f59e0b' },
-    { violation: 'No Insurance', count: 5600, color: '#d97706' },
-    { violation: 'Mobile Driving', count: 4300, color: '#b45309' },
+    { violation: 'Over-Speeding', count: 14200, color: '#3b82f6' },
+    { violation: 'No Helmet', count: 11800, color: '#f59e0b' },
+    { violation: 'Wrong Parking', count: 8400, color: '#10b981' },
+    { violation: 'Red Light Jump', count: 7100, color: '#8b5cf6' },
+    { violation: 'No Insurance', count: 5600, color: '#ef4444' },
+    { violation: 'Mobile Driving', count: 4300, color: '#3b82f6' },
     { violation: 'No Seatbelt', count: 3200, color: '#f59e0b' },
-    { violation: 'Triple Riding', count: 2100, color: '#d97706' }
+    { violation: 'Triple Riding', count: 2100, color: '#10b981' }
   ];
 
   // Section 3 Donut Chart data
   const donutData = [
-    { name: 'Two-Wheeler', value: 58, color: '#f59e0b' },
-    { name: 'Four-Wheeler', value: 29, color: '#fbbf24' },
-    { name: 'Commercial', value: 9, color: '#78350f' },
-    { name: 'Heavy Vehicle', value: 4, color: '#f59e0b' }
+    { name: 'Two-Wheeler', value: 58, color: '#3b82f6' },
+    { name: 'Four-Wheeler', value: 29, color: '#f59e0b' },
+    { name: 'Commercial', value: 9, color: '#10b981' },
+    { name: 'Heavy Vehicle', value: 4, color: '#8b5cf6' }
   ];
 
   const MoMChange = [
@@ -91,7 +91,7 @@ export default function ViolationAnalyticsScreen() {
         <h2 className="text-xl font-heading font-black text-slate-800 dark:text-white tracking-wide">
           Traffic Intelligence Dashboard
         </h2>
-        <span className="text-[10px] text-amber-500 font-extrabold uppercase tracking-widest block">
+        <span className="text-[10px] text-purple-400 font-extrabold uppercase tracking-widest block">
           Karnataka State • May 2025
         </span>
       </div>
@@ -100,9 +100,9 @@ export default function ViolationAnalyticsScreen() {
       <div className="flex items-center gap-3 overflow-x-auto pb-4 scrollbar-none shrink-0">
         
         {/* KPI 1 */}
-        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-amber-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-12 h-12 bg-amber-500/5 rounded-full blur-lg pointer-events-none" />
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Total Challans</span>
+        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-blue-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-12 h-12 bg-blue-500/10 rounded-full blur-lg pointer-events-none" />
+          <span className="text-[9px] font-bold text-blue-450 uppercase tracking-wider block">Total Challans</span>
           <strong className="text-lg font-mono font-black text-white block mt-1.5 tabular-nums">
             {totalChallans.toLocaleString()}
           </strong>
@@ -110,8 +110,9 @@ export default function ViolationAnalyticsScreen() {
         </div>
 
         {/* KPI 2 */}
-        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-amber-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
-          <span className="text-[9px] font-bold text-red-400 uppercase tracking-wider block">Pending</span>
+        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-red-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-12 h-12 bg-red-500/5 rounded-full blur-lg pointer-events-none" />
+          <span className="text-[9px] font-bold text-red-450 uppercase tracking-wider block">Pending</span>
           <strong className="text-lg font-mono font-black text-red-500 block mt-1.5 tabular-nums">
             {pendingChallans.toLocaleString()}
           </strong>
@@ -119,7 +120,8 @@ export default function ViolationAnalyticsScreen() {
         </div>
 
         {/* KPI 3 */}
-        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-amber-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+        <div className="min-w-[115px] bg-slate-900 border border-slate-800 dark:border-emerald-500/20 rounded-2xl p-3.5 flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-12 h-12 bg-emerald-500/5 rounded-full blur-lg pointer-events-none" />
           <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wider block">Collected</span>
           <strong className="text-lg font-mono font-black text-emerald-450 block mt-1.5 tabular-nums">
             ₹{collectedFines} Cr
@@ -142,10 +144,10 @@ export default function ViolationAnalyticsScreen() {
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center justify-between">
           <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-            <TrendingUp className="w-4 h-4 text-amber-500" />
+            <TrendingUp className="w-4 h-4 text-purple-400" />
             Challans Issued — Last 30 Days
           </span>
-          <span className="text-[9px] font-bold bg-amber-500/10 text-amber-500 px-2 py-0.5 rounded uppercase">Daily Trend</span>
+          <span className="text-[9px] font-bold bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded uppercase">Daily Trend</span>
         </div>
 
         <div className="w-full h-44 mt-1 font-mono text-[9px]">
@@ -153,9 +155,9 @@ export default function ViolationAnalyticsScreen() {
             <AreaChart data={lineData} margin={{ top: 5, right: 5, left: -25, bottom: 0 }}>
               <defs>
                 <linearGradient id="colorArea" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.25}/>
-                  <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.01}/>
-                </linearGradient>
+                <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.25}/>
+                <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.01}/>
+              </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
               <XAxis dataKey="name" stroke="#64748b" tickLine={false} />
@@ -164,7 +166,7 @@ export default function ViolationAnalyticsScreen() {
                 contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px' }} 
                 itemStyle={{ color: '#fff', fontWeight: 'bold' }}
               />
-              <Area type="monotone" dataKey="count" stroke="#3b82f6" strokeWidth={2.5} fillOpacity={1} fill="url(#colorArea)" />
+              <Area type="monotone" dataKey="count" stroke="#8b5cf6" strokeWidth={2.5} fillOpacity={1} fill="url(#colorArea)" />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -174,7 +176,7 @@ export default function ViolationAnalyticsScreen() {
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center justify-between">
           <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
-            <BarChart3 className="w-4 h-4 text-amber-500" />
+            <BarChart3 className="w-4 h-4 text-purple-400" />
             Most Common Violations — May 2025
           </span>
         </div>
@@ -202,7 +204,7 @@ export default function ViolationAnalyticsScreen() {
       {/* Vehicle Type Breakdown - Donut Chart */}
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5 block">
-          <Layers className="w-4 h-4 text-amber-500" />
+          <Layers className="w-4 h-4 text-purple-400" />
           Vehicle Type Breakdown
         </span>
 
@@ -250,7 +252,7 @@ export default function ViolationAnalyticsScreen() {
       {/* Section 4 - Monthly Comparison Card */}
       <div className="glass-panel p-4.5 space-y-3.5">
         <div className="flex items-center gap-1.5">
-          <RefreshCw className="w-4 h-4 text-amber-500 animate-spin-slow" />
+          <RefreshCw className="w-4 h-4 text-purple-400 animate-spin-slow" />
           <h4 className="text-xs font-heading font-extrabold uppercase text-slate-800 dark:text-slate-300 tracking-wider">
             Month-Over-Month Change
           </h4>

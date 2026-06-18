@@ -33,7 +33,11 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white/80 dark:bg-navy-950/80 border-b border-slate-200 dark:border-white/5 backdrop-blur-lg px-4 py-3 flex lg:hidden items-center justify-between transition-colors duration-300">
+    <header className={`sticky top-0 z-40 w-full backdrop-blur-lg px-4 py-3 flex lg:hidden items-center justify-between transition-colors duration-300 border-b ${
+      user?.isAuthority 
+        ? 'bg-[#16161a]/95 border-purple-900/20 text-slate-100' 
+        : 'bg-white/80 dark:bg-navy-950/80 border-slate-200 dark:border-white/5 text-slate-800 dark:text-white'
+    }`}>
       {/* Brand logo / Back Arrow */}
       <div className="flex items-center gap-1.5">
         {activeScreen !== 'dashboard' && (

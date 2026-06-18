@@ -107,7 +107,7 @@ export default function AdminMonitoringScreen() {
         <h2 className="text-xl font-heading font-black text-slate-800 dark:text-white tracking-wide">
           System Administration
         </h2>
-        <span className="text-[10px] text-amber-500 font-extrabold uppercase tracking-widest block">
+        <span className="text-[10px] text-blue-500 font-extrabold uppercase tracking-widest block">
           Manage challan database and regional rules
         </span>
       </div>
@@ -116,7 +116,7 @@ export default function AdminMonitoringScreen() {
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 dark:text-slate-400">
-            <Scale className="w-4 h-4 text-amber-500" />
+            <Scale className="w-4 h-4 text-blue-500" />
             <span>Regional Rules Manager</span>
           </div>
           
@@ -127,7 +127,7 @@ export default function AdminMonitoringScreen() {
               setSelectedState(e.target.value);
               setEditingKey(null);
             }}
-            className="bg-slate-100 dark:bg-navy-900 border border-slate-250 dark:border-white/10 rounded-xl py-1 px-2.5 text-[10px] text-slate-800 dark:text-white focus:border-amber-500 focus:outline-none font-bold"
+            className="bg-slate-100 dark:bg-navy-900 border border-slate-250 dark:border-white/10 rounded-xl py-1 px-2.5 text-[10px] text-slate-800 dark:text-white focus:border-blue-500 focus:outline-none font-bold"
           >
             <option value="Karnataka">Karnataka State</option>
             <option value="Goa">Goa State</option>
@@ -153,14 +153,14 @@ export default function AdminMonitoringScreen() {
                       type="text" 
                       value={editValue} 
                       onChange={(e) => setEditValue(e.target.value)} 
-                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-500/30 focus:outline-none focus:border-amber-500 font-mono"
+                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-blue-500/30 focus:outline-none focus:border-blue-500 font-mono"
                     />
-                    <button onClick={() => handleSaveInline('helmet')} className="p-1 rounded bg-amber-500 text-slate-950 hover:bg-amber-600"><Check className="w-3 h-3" /></button>
+                    <button onClick={() => handleSaveInline('helmet')} className="p-1 rounded bg-blue-600 text-white hover:bg-blue-750"><Check className="w-3 h-3" /></button>
                   </div>
                 ) : (
                   <>
                     <strong className="text-slate-800 dark:text-white font-mono">₹{activeRules.helmet.toLocaleString('en-IN')}</strong>
-                    <button onClick={() => handleEditClick('helmet', activeRules.helmet)} className="text-[8px] font-extrabold text-amber-500 hover:text-amber-600 border border-amber-500/25 px-1.5 py-0.2 rounded">Edit</button>
+                    <button onClick={() => handleEditClick('helmet', activeRules.helmet)} className="text-[8px] font-extrabold text-blue-500 hover:text-blue-600 border border-blue-500/25 px-1.5 py-0.2 rounded">Edit</button>
                   </>
                 )}
               </div>
@@ -177,14 +177,14 @@ export default function AdminMonitoringScreen() {
                       type="text" 
                       value={editValue} 
                       onChange={(e) => setEditValue(e.target.value)} 
-                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-500/30 focus:outline-none focus:border-amber-500 font-mono"
+                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-blue-500/30 focus:outline-none focus:border-blue-500 font-mono"
                     />
-                    <button onClick={() => handleSaveInline('speeding')} className="p-1 rounded bg-amber-500 text-slate-950 hover:bg-amber-600"><Check className="w-3 h-3" /></button>
+                    <button onClick={() => handleSaveInline('speeding')} className="p-1 rounded bg-blue-600 text-white hover:bg-blue-750"><Check className="w-3 h-3" /></button>
                   </div>
                 ) : (
                   <>
                     <strong className="text-slate-800 dark:text-white font-mono">₹{activeRules.speeding.toLocaleString('en-IN')}</strong>
-                    <button onClick={() => handleEditClick('speeding', activeRules.speeding)} className="text-[8px] font-extrabold text-amber-500 hover:text-amber-600 border border-amber-500/25 px-1.5 py-0.2 rounded">Edit</button>
+                    <button onClick={() => handleEditClick('speeding', activeRules.speeding)} className="text-[8px] font-extrabold text-blue-500 hover:text-blue-600 border border-blue-500/25 px-1.5 py-0.2 rounded">Edit</button>
                   </>
                 )}
               </div>
@@ -201,14 +201,14 @@ export default function AdminMonitoringScreen() {
                       type="text" 
                       value={editValue} 
                       onChange={(e) => setEditValue(e.target.value)} 
-                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-500/30 focus:outline-none focus:border-amber-500 font-mono"
+                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-blue-500/30 focus:outline-none focus:border-blue-500 font-mono"
                     />
-                    <button onClick={() => handleSaveInline('insurance')} className="p-1 rounded bg-amber-500 text-slate-950 hover:bg-amber-600"><Check className="w-3 h-3" /></button>
+                    <button onClick={() => handleSaveInline('insurance')} className="p-1 rounded bg-blue-600 text-white hover:bg-blue-750"><Check className="w-3 h-3" /></button>
                   </div>
                 ) : (
                   <>
                     <strong className="text-slate-800 dark:text-white font-mono">₹{activeRules.insurance.toLocaleString('en-IN')}</strong>
-                    <button onClick={() => handleEditClick('insurance', activeRules.insurance)} className="text-[8px] font-extrabold text-amber-500 hover:text-amber-600 border border-amber-500/25 px-1.5 py-0.2 rounded">Edit</button>
+                    <button onClick={() => handleEditClick('insurance', activeRules.insurance)} className="text-[8px] font-extrabold text-blue-500 hover:text-blue-600 border border-blue-500/25 px-1.5 py-0.2 rounded">Edit</button>
                   </>
                 )}
               </div>
@@ -225,14 +225,14 @@ export default function AdminMonitoringScreen() {
                       type="text" 
                       value={editValue} 
                       onChange={(e) => setEditValue(e.target.value)} 
-                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-amber-500/30 focus:outline-none focus:border-amber-500 font-mono"
+                      className="w-16 bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-white text-[10px] font-bold px-1.5 py-0.5 rounded border border-blue-500/30 focus:outline-none focus:border-blue-500 font-mono"
                     />
-                    <button onClick={() => handleSaveInline('mobile')} className="p-1 rounded bg-amber-500 text-slate-950 hover:bg-amber-600"><Check className="w-3 h-3" /></button>
+                    <button onClick={() => handleSaveInline('mobile')} className="p-1 rounded bg-blue-600 text-white hover:bg-blue-750"><Check className="w-3 h-3" /></button>
                   </div>
                 ) : (
                   <>
                     <strong className="text-slate-800 dark:text-white font-mono">₹{activeRules.mobile.toLocaleString('en-IN')}</strong>
-                    <button onClick={() => handleEditClick('mobile', activeRules.mobile)} className="text-[8px] font-extrabold text-amber-500 hover:text-amber-600 border border-amber-500/25 px-1.5 py-0.2 rounded">Edit</button>
+                    <button onClick={() => handleEditClick('mobile', activeRules.mobile)} className="text-[8px] font-extrabold text-blue-500 hover:text-blue-600 border border-blue-500/25 px-1.5 py-0.2 rounded">Edit</button>
                   </>
                 )}
               </div>
@@ -249,7 +249,7 @@ export default function AdminMonitoringScreen() {
         <div className="grid grid-cols-2 gap-3 pt-1">
           <button
             onClick={() => showToast("Simulating saving configuration... Done! ✅")}
-            className="bg-amber-500 hover:bg-amber-600 text-slate-950 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all active:scale-[0.98]"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider transition-all active:scale-[0.98] shadow-md shadow-blue-500/10"
           >
             Save Changes
           </button>
@@ -266,7 +266,7 @@ export default function AdminMonitoringScreen() {
       {/* Section 2 - Cache & Data Sync Status */}
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 dark:text-slate-400">
-          <Database className="w-4 h-4 text-amber-500" />
+          <Database className="w-4 h-4 text-blue-500" />
           <span>Data Sync & Cache Status</span>
         </div>
 
@@ -312,9 +312,9 @@ export default function AdminMonitoringScreen() {
         <div className="grid grid-cols-2 gap-3 pt-1">
           <button
             onClick={handleSyncAll}
-            className="bg-slate-900 border border-slate-800 hover:border-amber-500/20 text-white py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]"
+            className="bg-transparent border border-slate-350 dark:border-white/10 hover:border-slate-400 dark:hover:border-white/20 text-slate-700 dark:text-slate-305 py-2.5 rounded-xl text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all active:scale-[0.98]"
           >
-            <RefreshCw className={`w-3.5 h-3.5 text-amber-500 ${syncLoading ? 'animate-spin' : ''}`} />
+            <RefreshCw className={`w-3.5 h-3.5 text-blue-500 ${syncLoading ? 'animate-spin' : ''}`} />
             <span>Sync All Regions</span>
           </button>
           
@@ -330,7 +330,7 @@ export default function AdminMonitoringScreen() {
       {/* Section 3 - System Health Monitor */}
       <div className="glass-panel p-4.5 space-y-3.5">
         <div className="flex items-center gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
-          <Cpu className="w-4.5 h-4.5 text-amber-500" />
+          <Cpu className="w-4.5 h-4.5 text-blue-500" />
           <span className="text-xs font-heading font-extrabold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
             Live System Health Metrics
           </span>
@@ -388,7 +388,7 @@ export default function AdminMonitoringScreen() {
       {/* Floating Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-50 bg-slate-900 border border-slate-700 text-white font-bold text-xs py-3 px-6 rounded-2xl shadow-xl flex items-center gap-2 animate-fade-in">
-          <Check className="w-4 h-4 text-amber-500" />
+          <Check className="w-4 h-4 text-blue-500" />
           <span>{toastMessage}</span>
         </div>
       )}

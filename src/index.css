@@ -1,3 +1,15 @@
+:root {
+  --color-electric: 59 130 246;
+  --color-electric-glow: 96 165 250;
+  --color-electric-dark: 29 78 216;
+}
+
+.theme-officer {
+  --color-electric: 109 40 217;
+  --color-electric-glow: 139 92 246;
+  --color-electric-dark: 76 29 149;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -87,4 +99,12 @@
 
 .bg-glow-pulse {
   animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* Tactical grid pattern for officer/admin portal */
+.bg-grid-pattern {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(109, 40, 217, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(109, 40, 217, 0.04) 1px, transparent 1px);
 }

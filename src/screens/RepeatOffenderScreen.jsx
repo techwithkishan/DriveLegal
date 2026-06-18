@@ -13,10 +13,10 @@ export default function RepeatOffenderScreen() {
 
   // Recurrence Chart data
   const recurrenceData = [
-    { name: '1 Violation', count: 28400, color: '#fbbf24' },
+    { name: '1 Violation', count: 28400, color: '#3b82f6' },
     { name: '2 Violations', count: 8200, color: '#f59e0b' },
-    { name: '3 Violations', count: 3241, color: '#d97706' },
-    { name: '4+ Violations', count: 847, color: '#b45309' },
+    { name: '3 Violations', count: 3241, color: '#10b981' },
+    { name: '4+ Violations', count: 847, color: '#8b5cf6' },
     { name: 'Court Ref', count: 124, color: '#ef4444' }
   ];
 
@@ -35,7 +35,7 @@ export default function RepeatOffenderScreen() {
         <h2 className="text-xl font-heading font-black text-slate-800 dark:text-white tracking-wide">
           Repeat Offense Intelligence
         </h2>
-        <span className="text-[10px] text-amber-500 font-extrabold uppercase tracking-widest block">
+        <span className="text-[10px] text-blue-500 font-extrabold uppercase tracking-widest block">
           Identifying High-Risk Driver Patterns
         </span>
       </div>
@@ -44,8 +44,9 @@ export default function RepeatOffenderScreen() {
       <div className="grid grid-cols-3 gap-3 mb-4 shrink-0">
         
         {/* KPI 1 */}
-        <div className="bg-slate-900 border border-slate-800 rounded-xl p-3 flex flex-col justify-between shadow-lg">
-          <span className="text-[8px] font-bold text-slate-400 uppercase tracking-wider block">Repeat Offenders</span>
+        <div className="bg-slate-900 border border-blue-500/20 rounded-xl p-3 flex flex-col justify-between shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-8 h-8 bg-blue-500/5 rounded-full blur-md pointer-events-none" />
+          <span className="text-[8px] font-bold text-blue-450 uppercase tracking-wider block">Repeat Offenders</span>
           <strong className="text-sm font-mono font-black text-white mt-1 block">3,241</strong>
           <span className="text-[7px] text-slate-500 block mt-0.5">Drivers (3+ Violations)</span>
         </div>
@@ -69,7 +70,7 @@ export default function RepeatOffenderScreen() {
       {/* Recurrence Chart */}
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-500 dark:text-slate-400">
-          <BarChart3 className="w-4 h-4 text-amber-500" />
+          <BarChart3 className="w-4 h-4 text-blue-500" />
           <span>How Often Drivers Repeat Violations</span>
         </div>
 
@@ -96,7 +97,7 @@ export default function RepeatOffenderScreen() {
       {/* Top Repeat Violation Types Table */}
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center gap-1.5">
-          <RefreshCw className="w-4 h-4 text-amber-500 animate-spin-slow" />
+          <RefreshCw className="w-4 h-4 text-blue-500 animate-spin-slow" />
           <h4 className="text-xs font-heading font-extrabold uppercase text-slate-800 dark:text-slate-300 tracking-wider">
             Top Repeat Violation Types
           </h4>
@@ -116,7 +117,7 @@ export default function RepeatOffenderScreen() {
                 <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-all text-slate-700 dark:text-slate-300">
                   <td className="py-2.5 px-3 font-bold">{item.violation}</td>
                   <td className="py-2.5 px-2 font-mono text-slate-500">{item.count}</td>
-                  <td className="py-2.5 px-2 font-mono text-amber-500 font-extrabold">{item.gap}</td>
+                  <td className="py-2.5 px-2 font-mono text-blue-500 font-extrabold">{item.gap}</td>
                 </tr>
               ))}
             </tbody>
@@ -127,7 +128,7 @@ export default function RepeatOffenderScreen() {
       {/* Demographic Profile Card */}
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center gap-1.5 pb-2 border-b border-slate-200 dark:border-white/5">
-          <Users className="w-4 h-4 text-amber-500" />
+          <Users className="w-4 h-4 text-blue-500" />
           <span className="text-xs font-heading font-extrabold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
             Repeat Offender Profile (Demo)
           </span>
@@ -154,10 +155,10 @@ export default function RepeatOffenderScreen() {
       </div>
 
       {/* AI Note Card */}
-      <div className="bg-gradient-to-tr from-amber-500/5 to-amber-500/10 border border-amber-500/25 p-4.5 rounded-2xl space-y-2 shadow-xl glow-amber">
+      <div className="bg-gradient-to-tr from-blue-500/5 to-blue-500/10 border border-blue-500/20 p-4.5 rounded-2xl space-y-2 shadow-xl glow-blue">
         <div className="flex items-center gap-2">
-          <Bot className="w-5 h-5 text-amber-500" />
-          <h4 className="text-xs font-heading font-black text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+          <Bot className="w-5 h-5 text-blue-500" />
+          <h4 className="text-xs font-heading font-black text-blue-750 dark:text-blue-300 uppercase tracking-wider">
             🤖 AI Profile Analysis
           </h4>
         </div>

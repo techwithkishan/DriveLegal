@@ -72,10 +72,18 @@ export default function TopBar() {
       // Phase 6 Admin
       case 'adminDashboard':
         return 'Governance Analytics Control';
+      case 'fieldOfficerDashboard':
+        return 'Live Patrol Zone View';
+      case 'officerIssuanceLog':
+        return 'Challan Issuance Log';
+      case 'officerWatchlist':
+        return 'Repeat Offender Watchlist';
       case 'adminZones':
         return 'Enforcement Intelligence Map';
       case 'adminOffenders':
         return 'Repeat Offender Directory';
+      case 'adminVehicleLookup':
+        return 'Vehicle History Lookup';
       case 'adminReports':
         return 'District Compliance Reports';
       case 'adminMonitoring':
@@ -206,9 +214,7 @@ export default function TopBar() {
           onClick={() => setActiveScreen('profile')}
           className={`flex items-center gap-2 p-1 rounded-2xl hover:bg-slate-150 dark:hover:bg-white/5 border border-transparent hover:border-slate-200 dark:hover:border-white/5 transition-all text-left group`}
         >
-          <div className={`w-8 h-8 rounded-xl flex items-center justify-center text-white font-mono text-[10px] font-black group-hover:scale-102 transition-transform shadow ${
-            isAdminMode ? 'bg-amber-500 shadow-amber-500/10' : 'bg-electric shadow-electric/10'
-          }`}>
+          <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white font-mono text-[10px] font-black group-hover:scale-102 transition-transform shadow bg-electric shadow-electric/10">
             {user.name.substring(0, 2).toUpperCase()}
           </div>
         </button>

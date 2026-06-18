@@ -16,9 +16,9 @@ export default {
           600: '#2A3B6F',
         },
         electric: {
-          DEFAULT: '#3B82F6',
-          glow: '#60A5FA',
-          dark: '#1D4ED8',
+          DEFAULT: 'rgb(var(--color-electric) / <alpha-value>)',
+          glow: 'rgb(var(--color-electric-glow) / <alpha-value>)',
+          dark: 'rgb(var(--color-electric-dark) / <alpha-value>)',
         },
       },
       fontFamily: {

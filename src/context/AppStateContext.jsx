@@ -13,6 +13,7 @@ export const AppStateProvider = ({ children }) => {
       if (hash === 'admin/dashboard') return 'adminDashboard';
       if (hash === 'admin/zones') return 'adminZones';
       if (hash === 'admin/offenders') return 'adminOffenders';
+      if (hash === 'admin/vehicle-lookup') return 'adminVehicleLookup';
       if (hash === 'admin/reports') return 'adminReports';
       if (hash === 'admin/monitoring') return 'adminMonitoring';
       if (hash === 'country-select') return 'countrySelect';
@@ -27,6 +28,7 @@ export const AppStateProvider = ({ children }) => {
     if (activeScreen === 'adminDashboard') hash = 'admin/dashboard';
     else if (activeScreen === 'adminZones') hash = 'admin/zones';
     else if (activeScreen === 'adminOffenders') hash = 'admin/offenders';
+    else if (activeScreen === 'adminVehicleLookup') hash = 'admin/vehicle-lookup';
     else if (activeScreen === 'adminReports') hash = 'admin/reports';
     else if (activeScreen === 'adminMonitoring') hash = 'admin/monitoring';
     else if (activeScreen === 'countrySelect') hash = 'country-select';
@@ -46,6 +48,7 @@ export const AppStateProvider = ({ children }) => {
         if (hash === 'admin/dashboard') screen = 'adminDashboard';
         else if (hash === 'admin/zones') screen = 'adminZones';
         else if (hash === 'admin/offenders') screen = 'adminOffenders';
+        else if (hash === 'admin/vehicle-lookup') screen = 'adminVehicleLookup';
         else if (hash === 'admin/reports') screen = 'adminReports';
         else if (hash === 'admin/monitoring') screen = 'adminMonitoring';
         else if (hash === 'country-select') screen = 'countrySelect';
@@ -217,8 +220,9 @@ export const AppStateProvider = ({ children }) => {
 
   // Admin Mode state
   const [isAdminMode, setIsAdminMode] = useState(() => {
-
-    return localStorage.getItem('DRIVELEGAL_admin_mode') === 'true';
+    const savedUser = localStorage.getItem('DRIVELEGAL_user');
+    const parsedUser = savedUser ? JSON.parse(savedUser) : null;
+    return !!(parsedUser?.isAuthority && localStorage.getItem('DRIVELEGAL_admin_mode') === 'true');
   });
 
   useEffect(() => {
@@ -277,6 +281,7 @@ export const AppStateProvider = ({ children }) => {
   // Mock Authentication Login Method lead to dashboard
   const executeLogin = (method, value) => {
     setLoginMethod(method);
+    setIsAdminMode(false);
     
     // Check if user already exists
 
@@ -319,6 +324,7 @@ export const AppStateProvider = ({ children }) => {
       registeredState: userData.registeredState || DEMO_USER.registeredState
     };
     setUser(newUser);
+    setIsAdminMode(false);
     setVehicles([
       { plate: newUser.primaryVehicle, type: 'Car', state: newUser.registeredState }
     ]);
@@ -338,16 +344,17 @@ export const AppStateProvider = ({ children }) => {
       isAuthority: true,
       licenseNumber: "OFFICER-DL",
       primaryVehicle: "POLICE-VEHICLE",
-      registeredState: authData.region || "Karnataka"
+      registeredState: authData.region || "Karnataka",
+      role: authData.role || 'field'
     };
     setUser(newOfficer);
     setIsAdminMode(true);
-    setActiveScreen('adminDashboard');
+    setActiveScreen(newOfficer.role === 'field' ? 'fieldOfficerDashboard' : 'adminDashboard');
   };
 
-  const loginAuthority = (badgeId, pin) => {
+  const loginAuthority = (badgeId, pin, role = 'field') => {
     const officer = {
-      name: "Inspector Vikram Singh",
+      name: role === 'field' ? "Officer Vikram Singh" : "Inspector Vikram Singh",
       badgeId: badgeId.toUpperCase(),
       phone: "+91 99999 88888",
       region: "Karnataka",
@@ -355,11 +362,12 @@ export const AppStateProvider = ({ children }) => {
       isAuthority: true,
       licenseNumber: "OFFICER-DL",
       primaryVehicle: "POLICE-VEHICLE",
-      registeredState: "Karnataka"
+      registeredState: "Karnataka",
+      role: role
     };
     setUser(officer);
     setIsAdminMode(true);
-    setActiveScreen('adminDashboard');
+    setActiveScreen(role === 'field' ? 'fieldOfficerDashboard' : 'adminDashboard');
   };
 
   const logout = () => {

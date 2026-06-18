@@ -3,7 +3,7 @@ import {
   Shield, Home, Scale, ClipboardList, Bot, BookOpen, Sparkles, User, 
   CreditCard, Map, Users, FileText, Settings, LogOut, ChevronLeft, 
   ChevronRight, ShieldAlert, Sun, Moon, Wifi, WifiOff, Globe, ArrowLeft, Car, Info,
-  Trophy, Route
+  Trophy, Route, Search
 } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
 import { useGlobalContext } from '../context/GlobalContext';
@@ -39,22 +39,41 @@ export default function SidebarNav() {
   ];
 
   const adminItems = [
-    { id: 'adminDashboard', label: 'Violation Analytics', icon: Home },
-    { id: 'adminZones', label: 'Zone Intelligence', icon: Map },
-    { id: 'adminOffenders', label: 'Repeat Offenders', icon: Users },
-    { id: 'adminReports', label: 'Smart Reports', icon: FileText },
-    { id: 'adminMonitoring', label: 'System Control', icon: Settings },
+    { id: 'adminDashboard', label: 'Violation Analytics', icon: Home, emoji: '📊' },
+    { id: 'adminZones', label: 'Zone Intelligence', icon: Map, emoji: '🗺️' },
+    { id: 'adminOffenders', label: 'Repeat Offenders', icon: Users, emoji: '👥' },
+    { id: 'adminVehicleLookup', label: 'Vehicle History Lookup', icon: Search, emoji: '🔍' },
+    { id: 'adminReports', label: 'Smart Reports', icon: FileText, emoji: '📋' },
+    { id: 'adminMonitoring', label: 'System Control', icon: Settings, emoji: '⚙️' },
   ];
 
-  const navItems = isAdminMode ? adminItems : citizenItems;
-  const activeAccent = isAdminMode ? 'border-amber-500/30 text-amber-500 bg-amber-500/10 dark:bg-amber-500/5 glow-amber' : 'border-electric/30 text-electric bg-electric/10 dark:bg-electric/5 glow-electric';
-  const hoverAccent = isAdminMode ? 'hover:text-amber-500 hover:bg-amber-500/5 dark:hover:bg-amber-500/5' : 'hover:text-electric hover:bg-electric/5 dark:hover:bg-electric/5';
+  const fieldOfficerItems = [
+    { id: 'fieldOfficerDashboard', label: 'Live Patrol Zone', icon: ShieldAlert, emoji: '🚨' },
+    { id: 'adminVehicleLookup', label: 'Vehicle Lookup', icon: Search, emoji: '🔍' },
+    { id: 'officerIssuanceLog', label: 'Challan Log', icon: ClipboardList, emoji: '📋' },
+    { id: 'officerWatchlist', label: 'Offender Watchlist', icon: Users, emoji: '⚠️' },
+    { id: 'adminDashboard', label: 'Governance Analytics', icon: Home, emoji: '📊' },
+  ];
+
+  const navItems = isAdminMode 
+    ? (user?.role === 'field' ? fieldOfficerItems : adminItems) 
+    : citizenItems;
+
+  const activeAccent = (isAdminMode || user?.isAuthority) 
+    ? 'border-purple-500/30 text-purple-400 bg-purple-500/10 dark:bg-purple-500/5 shadow-inner' 
+    : 'border-electric/30 text-electric bg-electric/10 dark:bg-electric/5 glow-electric';
+
+  const hoverAccent = (isAdminMode || user?.isAuthority)
+    ? 'hover:text-purple-400 hover:bg-purple-500/5 dark:hover:bg-purple-500/5'
+    : 'hover:text-electric hover:bg-electric/5 dark:hover:bg-electric/5';
 
   return (
     <aside 
-      className={`hidden lg:flex flex-col h-screen shrink-0 border-r border-slate-200 dark:border-white/5 bg-white dark:bg-navy-950 transition-all duration-300 sticky top-0 z-30 select-none ${
-        collapsed ? 'w-20' : 'w-72 xl:w-80'
-      }`}
+      className={`hidden lg:flex flex-col h-screen shrink-0 border-r transition-all duration-300 sticky top-0 z-30 select-none ${
+        (isAdminMode || user?.isAuthority) 
+          ? 'bg-[#16161a] border-purple-900/20 text-slate-100' 
+          : 'bg-white dark:bg-navy-950 border-slate-200 dark:border-white/5 text-slate-900 dark:text-slate-100'
+      } ${collapsed ? 'w-20' : 'w-72 xl:w-80'}`}
     >
       {/* 1. TOP BRANDING BANNER */}
       <div className={`p-5 flex items-center justify-between border-b border-slate-100 dark:border-white/5 shrink-0 ${
@@ -65,11 +84,7 @@ export default function SidebarNav() {
           className="flex items-center gap-3 cursor-pointer group"
         >
 
-          <div className={`rounded-xl overflow-hidden text-white shadow-lg transition-all w-10 h-10 shrink-0 ${
-            isAdminMode 
-              ? 'shadow-amber-500/20 group-hover:scale-105' 
-              : 'shadow-electric/20 group-hover:scale-105'
-          }`}>
+          <div className="rounded-xl overflow-hidden text-white shadow-lg transition-all w-10 h-10 shrink-0 shadow-electric/20 group-hover:scale-105">
             <img src="/drivelegal-logo.jpg" alt="DRIVOS Logo" className="w-full h-full object-cover" />
 
           </div>
@@ -139,14 +154,14 @@ export default function SidebarNav() {
 
       {/* Governance Mode Header Banner inside Sidebar */}
       {isAdminMode && !collapsed && (
-        <div className="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border-b border-amber-500/20 px-5 py-2.5 text-[8.5px] text-amber-500 font-extrabold tracking-wider uppercase animate-fade-in shrink-0 flex items-center justify-between">
-          <span>Enforcement Console</span>
+        <div className="bg-gradient-to-r from-purple-900/10 to-indigo-900/10 border-b border-purple-900/20 px-5 py-2.5 text-[8.5px] text-purple-400 font-extrabold tracking-wider uppercase animate-fade-in shrink-0 flex items-center justify-between">
+          <span>{user?.role === 'field' ? 'Field Officer Portal' : 'District Admin Portal'}</span>
           <button 
             onClick={() => {
               setIsAdminMode(false);
               setActiveScreen('profile');
             }}
-            className="hover:underline text-[8px] text-slate-400 font-bold"
+            className="hover:underline text-[8px] text-slate-450 dark:text-slate-400 font-bold"
           >
             ← Citizen View
           </button>
@@ -174,9 +189,7 @@ export default function SidebarNav() {
               }`} />
               {!collapsed && <span className="truncate leading-none">{item.label}</span>}
               {isActive && !collapsed && (
-                <span className={`absolute right-4 w-1.5 h-1.5 rounded-full ${
-                  isAdminMode ? 'bg-amber-500 animate-pulse' : 'bg-electric animate-pulse'
-                }`} />
+                <span className="absolute right-4 w-1.5 h-1.5 rounded-full bg-electric animate-pulse" />
               )}
             </button>
           );
@@ -226,31 +239,22 @@ export default function SidebarNav() {
           </>
         )}
 
-        {/* Toggle Mode button inside Nav */}
-        {!isAdminMode && (
-          <button
-            onClick={() => {
-              setIsAdminMode(true);
-              setActiveScreen('adminDashboard');
-            }}
-            className={`w-full flex items-center gap-3.5 py-3 rounded-2xl text-amber-600 dark:text-amber-400 bg-amber-500/5 hover:bg-amber-500/10 border border-amber-500/10 transition-all font-bold text-[10px] uppercase tracking-wider mt-4 shrink-0 ${
-              collapsed ? 'justify-center px-0 border-0 bg-amber-500/10' : 'px-4'
-            }`}
-            title={collapsed ? 'Enforcement Mode' : ''}
-          >
-            <ShieldAlert className="w-5 h-5 shrink-0" />
-            {!collapsed && <span className="truncate">Governance Console</span>}
-          </button>
-        )}
+        {/* Toggle Mode button inside Nav removed */}
       </nav>
 
       {/* 3. BOTTOM FOOTER SECTION */}
-      <div className="p-4 border-t border-slate-100 dark:border-white/5 space-y-3 shrink-0 bg-white dark:bg-navy-950">
+      <div className={`p-4 border-t space-y-3 shrink-0 transition-all ${
+        (isAdminMode || user?.isAuthority) 
+          ? 'bg-[#16161a] border-purple-900/10' 
+          : 'bg-white dark:bg-navy-950 border-slate-100 dark:border-white/5'
+      }`}>
         {/* User Card */}
         <div className={`flex items-center justify-between ${collapsed ? 'flex-col gap-2.5' : ''}`}>
           <div className="flex items-center gap-3">
-            <div className={`p-2.5 rounded-xl text-white font-mono text-xs font-black shadow-md ${
-              isAdminMode ? 'bg-amber-500 shadow-amber-500/15' : 'bg-electric shadow-electric/15'
+            <div className={`p-2.5 rounded-xl text-white font-mono text-xs font-black shadow-md transition-all ${
+              (isAdminMode || user?.isAuthority) 
+                ? 'bg-purple-650 shadow-purple-500/15' 
+                : 'bg-electric shadow-electric/15'
             }`}>
               {user.name.substring(0, 2).toUpperCase()}
             </div>
@@ -270,10 +274,10 @@ export default function SidebarNav() {
           {!collapsed && (
             <button 
               onClick={() => setShowSettingsDrawer(!showSettingsDrawer)}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-250 dark:border-white/10 text-slate-500 dark:text-slate-450 active:scale-95 transition-all shrink-0"
+              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-250 dark:border-white/10 text-slate-550 dark:text-slate-400 active:scale-95 transition-all shrink-0"
               title="Simulation Controls"
             >
-              <Settings className="w-4 h-4 text-electric" />
+              <Settings className={`w-4 h-4 ${(isAdminMode || user?.isAuthority) ? 'text-purple-400' : 'text-electric'}`} />
             </button>
           )}
         </div>

@@ -171,7 +171,7 @@ export default function ZoneIntelligenceScreen() {
             key={`${row}-${col}`}
             onClick={() => hotspot && setSelectedZone(hotspot)}
             className={`aspect-square border rounded-md transition-all duration-300 relative group flex items-center justify-center cursor-pointer ${cellClass} ${
-              isSelected ? 'scale-105 ring-2 ring-white dark:ring-amber-500 border-white relative z-25' : ''
+              isSelected ? 'scale-105 ring-2 ring-white dark:ring-blue-500 border-white relative z-25' : ''
             } ${animateGrid ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
             style={{ 
               transitionDelay: `${animDelay}ms`,
@@ -204,7 +204,7 @@ export default function ZoneIntelligenceScreen() {
         <h2 className="text-xl font-heading font-black text-slate-800 dark:text-white tracking-wide">
           Zone Intelligence Map
         </h2>
-        <span className="text-[10px] text-amber-500 font-extrabold uppercase tracking-widest block">
+        <span className="text-[10px] text-blue-500 font-extrabold uppercase tracking-widest block">
           Bengaluru — Challan Density & Risk Zones
         </span>
       </div>
@@ -213,7 +213,7 @@ export default function ZoneIntelligenceScreen() {
       <div className="glass-panel p-4.5 space-y-3 mb-4">
         <div className="flex items-center justify-between text-[10px] font-bold text-slate-500 dark:text-slate-400">
           <span className="flex items-center gap-1">
-            <Map className="w-4 h-4 text-amber-500 animate-pulse" />
+            <Map className="w-4 h-4 text-blue-500 animate-pulse" />
             Live Density Visual Grid (8x8)
           </span>
           <span className="font-mono text-emerald-500">Karnataka GPS Sync</span>
@@ -299,8 +299,8 @@ export default function ZoneIntelligenceScreen() {
             </div>
             
             {/* Suggested Action card */}
-            <div className="bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 p-2 rounded-xl text-[10px] flex items-center gap-1.5 mt-2 leading-relaxed">
-              <Info className="w-3.5 h-3.5 shrink-0" />
+            <div className="bg-blue-500/10 border border-blue-500/20 text-blue-650 dark:text-blue-400 p-2 rounded-xl text-[10px] flex items-center gap-1.5 mt-2 leading-relaxed">
+              <Info className="w-3.5 h-3.5 text-blue-550 dark:text-blue-400 shrink-0" />
               <span><strong>Suggested Action:</strong> {selectedZone.action}</span>
             </div>
           </div>
@@ -308,10 +308,10 @@ export default function ZoneIntelligenceScreen() {
       )}
 
       {/* AI Zone Insight Card */}
-      <div className="bg-gradient-to-tr from-amber-500/5 to-amber-500/10 border border-amber-500/25 p-4.5 rounded-2xl space-y-2.5 shadow-xl glow-amber">
+      <div className="bg-gradient-to-tr from-blue-500/5 to-blue-500/10 border border-blue-500/20 p-4.5 rounded-2xl space-y-2.5 shadow-xl glow-blue">
         <div className="flex items-center gap-2">
-          <Bot className="w-5 h-5 text-amber-500" />
-          <h4 className="text-xs font-heading font-black text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+          <Bot className="w-5 h-5 text-blue-500" />
+          <h4 className="text-xs font-heading font-black text-blue-750 dark:text-blue-300 uppercase tracking-wider">
             🤖 AI Zone Insight
           </h4>
         </div>

@@ -24,6 +24,7 @@ export default function AuthScreen() {
   const [authRegion, setAuthRegion] = useState('Karnataka');
   const [authAgency, setAuthAgency] = useState('RTO Inspectorate');
   const [authPin, setAuthPin] = useState('');
+  const [authRole, setAuthRole] = useState('field'); // field, admin
 
   const otpRefs = useRef([]);
 
@@ -122,7 +123,7 @@ export default function AuthScreen() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      loginAuthority(authBadgeId, authPin);
+      loginAuthority(authBadgeId, authPin, authRole);
     }, 1200);
   };
 
@@ -145,7 +146,8 @@ export default function AuthScreen() {
         badgeId: authBadgeId,
         phone: authPhone,
         region: authRegion,
-        agency: authAgency
+        agency: authAgency,
+        role: authRole
       });
     }, 1500);
   };
@@ -155,7 +157,7 @@ export default function AuthScreen() {
       
       {/* Background Glow Ring */}
       <div className={`absolute top-1/4 left-1/2 -translate-x-1/2 w-48 h-48 rounded-full blur-[80px] pointer-events-none transition-all duration-500 ${
-        isAuthorityPortal ? 'bg-amber-500/15' : 'bg-electric/15'
+        isAuthorityPortal ? 'bg-purple-500/15' : 'bg-electric/15'
       }`} />
 
       {/* Header section */}
@@ -193,7 +195,7 @@ export default function AuthScreen() {
               }}
               className={`flex-1 py-2 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
                 !isAuthoritySignup 
-                  ? 'bg-amber-500 text-slate-950 shadow-md glow-amber' 
+                  ? 'bg-purple-650 text-white shadow-md glow-purple' 
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
@@ -207,7 +209,7 @@ export default function AuthScreen() {
               }}
               className={`flex-1 py-2 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
                 isAuthoritySignup 
-                  ? 'bg-amber-500 text-slate-950 shadow-md glow-amber' 
+                  ? 'bg-purple-650 text-white shadow-md glow-purple' 
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
@@ -218,6 +220,36 @@ export default function AuthScreen() {
           {/* AUTHORITY SIGN UP FORM */}
           {isAuthoritySignup ? (
             <form onSubmit={handleAuthoritySignUpSubmit} className="space-y-3.5">
+              {/* Role Toggle Selector */}
+              <div className="space-y-1 mb-2">
+                <label className="text-[9px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                  Enforcement Role
+                </label>
+                <div className="flex bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-0.5 rounded-xl gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setAuthRole('field')}
+                    className={`flex-1 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
+                      authRole === 'field' 
+                        ? 'bg-purple-650 text-white shadow-sm' 
+                        : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    Field Officer
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAuthRole('admin')}
+                    className={`flex-1 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
+                      authRole === 'admin' 
+                        ? 'bg-purple-650 text-white shadow-sm' 
+                        : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    District Admin
+                  </button>
+                </div>
+              </div>
               <div className="space-y-1">
                 <label className="text-[9px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                   Full Officer Name
@@ -228,7 +260,7 @@ export default function AuthScreen() {
                   value={authName}
                   onChange={(e) => setAuthName(e.target.value)}
                   placeholder="e.g. Vikram Singh"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all"
                 />
               </div>
 
@@ -242,7 +274,7 @@ export default function AuthScreen() {
                   value={authBadgeId}
                   onChange={(e) => setAuthBadgeId(e.target.value)}
                   placeholder="e.g. KA03-INS-584"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all"
                 />
               </div>
 
@@ -257,7 +289,7 @@ export default function AuthScreen() {
                   value={authPhone}
                   onChange={(e) => setAuthPhone(e.target.value.replace(/\D/g, ''))}
                   placeholder="e.g. 9999988888"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-850 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all"
                 />
               </div>
 
@@ -269,7 +301,7 @@ export default function AuthScreen() {
                   <select
                     value={authRegion}
                     onChange={(e) => setAuthRegion(e.target.value)}
-                    className="w-full bg-slate-100 dark:bg-navy-800 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-2.5 text-slate-850 dark:text-white text-xs font-semibold focus:outline-none transition-all"
+                    className="w-full bg-slate-100 dark:bg-navy-800 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-2.5 text-slate-855 dark:text-white text-xs font-semibold focus:outline-none transition-all focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                   >
                     <option value="Karnataka">Karnataka</option>
                     <option value="Maharashtra">Maharashtra</option>
@@ -285,7 +317,7 @@ export default function AuthScreen() {
                   <select
                     value={authAgency}
                     onChange={(e) => setAuthAgency(e.target.value)}
-                    className="w-full bg-slate-100 dark:bg-navy-800 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-2.5 text-slate-850 dark:text-white text-xs font-semibold focus:outline-none transition-all"
+                    className="w-full bg-slate-100 dark:bg-navy-800 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-2.5 text-slate-855 dark:text-white text-xs font-semibold focus:outline-none transition-all focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
                   >
                     <option value="RTO Inspectorate">RTO Inspectorate</option>
                     <option value="Traffic Police">Traffic Police</option>
@@ -305,14 +337,14 @@ export default function AuthScreen() {
                   value={authPin}
                   onChange={(e) => setAuthPin(e.target.value.replace(/\D/g, ''))}
                   placeholder="••••••"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-855 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all tracking-widest text-center"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-2.5 px-3.5 text-slate-855 dark:text-white text-xs font-semibold placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all tracking-widest text-center"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-500 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-black py-3 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition-all mt-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-650 hover:from-purple-750 hover:to-indigo-750 text-white font-black py-3 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all mt-4"
               >
                 {isLoading ? (
                   <RefreshCw className="w-4 h-4 animate-spin" />
@@ -325,8 +357,38 @@ export default function AuthScreen() {
               </button>
             </form>
           ) : (
-            /* AUTHORITY SIGN IN FORM */
             <form onSubmit={handleAuthoritySignIn} className="space-y-4">
+              {/* Role Toggle Selector */}
+              <div className="space-y-1">
+                <label className="text-[9px] font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
+                  Enforcement Role
+                </label>
+                <div className="flex bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-0.5 rounded-xl gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setAuthRole('field')}
+                    className={`flex-1 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
+                      authRole === 'field' 
+                        ? 'bg-purple-650 text-white shadow-sm' 
+                        : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    Field Officer
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAuthRole('admin')}
+                    className={`flex-1 py-1.5 rounded-lg text-[9px] font-extrabold uppercase tracking-wider transition-all duration-300 ${
+                      authRole === 'admin' 
+                        ? 'bg-purple-650 text-white shadow-sm' 
+                        : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
+                    }`}
+                  >
+                    District Admin
+                  </button>
+                </div>
+              </div>
+
               <div className="space-y-1.5">
                 <label className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                   Enforcement Badge ID
@@ -337,7 +399,7 @@ export default function AuthScreen() {
                   value={authBadgeId}
                   onChange={(e) => setAuthBadgeId(e.target.value)}
                   placeholder="e.g. KA03-INS-584"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-3 px-4 text-slate-800 dark:text-white text-xs font-semibold tracking-wider placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-3 px-4 text-slate-800 dark:text-white text-xs font-semibold tracking-wider placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all"
                   autoFocus
                 />
               </div>
@@ -353,14 +415,14 @@ export default function AuthScreen() {
                   value={authPin}
                   onChange={(e) => setAuthPin(e.target.value.replace(/\D/g, ''))}
                   placeholder="••••••"
-                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-3 px-4 text-slate-805 dark:text-white text-xs font-semibold tracking-widest text-center placeholder:text-slate-450 focus:border-amber-500 focus:outline-none transition-all"
+                  className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl py-3 px-4 text-slate-805 dark:text-white text-xs font-semibold tracking-widest text-center placeholder:text-slate-450 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 focus:outline-none transition-all"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-500 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-black py-3.5 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition-all mt-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-indigo-650 hover:from-purple-750 hover:to-indigo-750 text-white font-black py-3.5 rounded-xl text-xs uppercase tracking-widest shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2 transition-all mt-4"
               >
                 {isLoading ? (
                   <RefreshCw className="w-4 h-4 animate-spin" />
@@ -587,7 +649,7 @@ export default function AuthScreen() {
               setIsAuthoritySignup(false);
               setError('');
             }}
-            className="w-full border border-amber-500/35 hover:bg-amber-500/5 text-amber-500 font-extrabold py-2.5 rounded-xl text-[10px] uppercase tracking-widest transition-all mt-4 flex items-center justify-center gap-2"
+            className="w-full border border-purple-500/35 hover:bg-purple-500/5 text-purple-400 font-extrabold py-2.5 rounded-xl text-[10px] uppercase tracking-widest transition-all mt-4 flex items-center justify-center gap-2"
           >
             <Building2 className="w-3.5 h-3.5 animate-pulse" />
             <span>RTO Authority / Officer Portal</span>

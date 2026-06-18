@@ -43,6 +43,8 @@ import ZoneIntelligenceScreen from './screens/ZoneIntelligenceScreen';
 import RepeatOffenderScreen from './screens/RepeatOffenderScreen';
 import SmartAwarenessReportScreen from './screens/SmartAwarenessReportScreen';
 import AdminMonitoringScreen from './screens/AdminMonitoringScreen';
+import AdminVehicleLookupScreen from './screens/AdminVehicleLookupScreen';
+import FieldOfficerDashboardScreen from './screens/FieldOfficerDashboardScreen';
 
 // Landing Page Screen
 import LandingScreen from './screens/LandingScreen';
@@ -120,6 +122,12 @@ function AppContent() {
       // Phase 6
       case 'adminDashboard':
         return <ViolationAnalyticsScreen />;
+      case 'fieldOfficerDashboard':
+        return <FieldOfficerDashboardScreen subView="zone" />;
+      case 'officerIssuanceLog':
+        return <FieldOfficerDashboardScreen subView="log" />;
+      case 'officerWatchlist':
+        return <FieldOfficerDashboardScreen subView="watchlist" />;
       case 'adminZones':
         return <ZoneIntelligenceScreen />;
       case 'adminOffenders':
@@ -128,6 +136,8 @@ function AppContent() {
         return <SmartAwarenessReportScreen />;
       case 'adminMonitoring':
         return <AdminMonitoringScreen />;
+      case 'adminVehicleLookup':
+        return <AdminVehicleLookupScreen />;
       case 'countrySelect':
         return <CountrySelectorScreen />;
       case 'compare':
@@ -159,7 +169,7 @@ function AppContent() {
   const showHeader = activeScreen !== 'splash' && activeScreen !== 'auth' && activeScreen !== 'landing';
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${user?.isAuthority ? 'theme-officer !bg-[#0F0F12] dark:!bg-[#0F0F12] bg-grid-pattern' : ''}`}>
       {/* Country Transition Color Flash Overlay */}
       {isFlashing && (
         <div 
@@ -181,19 +191,17 @@ function AppContent() {
 
       {/* Governance Mode Amber Banner */}
       {isAdminMode && showHeader && (
-        <div className="w-full bg-amber-500 text-slate-950 px-4 py-2 font-bold text-xs flex items-center justify-between shadow-md relative z-50 shrink-0">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-slate-950 animate-pulse shrink-0" />
-
-            <span>GOVERNANCE MODE — DRIVOS ADMIN</span>
-
+        <div className="w-full bg-[#16161a] border-b border-purple-900/20 text-purple-400 px-4 py-2 font-mono text-[9px] uppercase tracking-wider flex items-center justify-between shadow-md relative z-50 shrink-0 select-none">
+          <div className="flex items-center gap-1.5 font-extrabold">
+            <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse shrink-0" />
+            <span>OFFICER DASHBOARD — RESTRICTED ACCESS</span>
           </div>
           <button 
             onClick={() => {
               setIsAdminMode(false);
               setActiveScreen('profile');
             }}
-            className="bg-slate-950 hover:bg-slate-900 text-amber-500 font-extrabold px-3 py-1 rounded-lg text-[10px] uppercase tracking-wider transition-all select-none"
+            className="bg-purple-900/30 hover:bg-purple-900/50 text-purple-300 font-bold px-3 py-1 rounded border border-purple-500/20 text-[8px] uppercase tracking-wider transition-all select-none"
           >
             ← Citizen View
           </button>

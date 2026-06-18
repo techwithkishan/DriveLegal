@@ -438,17 +438,19 @@ export default function ProfileScreen() {
       </div>
 
       {/* Switch to Governance View button */}
-      <button
-        onClick={() => {
-          setIsAdminMode(true);
-          setActiveScreen('adminDashboard');
-        }}
-        id="profile-governance-toggle-btn"
-        className="w-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 hover:from-amber-500/15 hover:to-orange-500/15 text-amber-600 dark:text-amber-400 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-      >
-        <ShieldAlert className="w-4 h-4 text-amber-500 animate-pulse" />
-        <span>Switch to Governance View</span>
-      </button>
+      {user?.isAuthority && (
+        <button
+          onClick={() => {
+            setIsAdminMode(true);
+            setActiveScreen(user.role === 'field' ? 'fieldOfficerDashboard' : 'adminDashboard');
+          }}
+          id="profile-governance-toggle-btn"
+          className="w-full bg-gradient-to-r from-electric/10 to-electric-glow/10 border border-electric/20 hover:from-electric/15 hover:to-electric-glow/15 text-electric dark:text-electric-glow py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+        >
+          <ShieldAlert className="w-4 h-4 text-electric animate-pulse" />
+          <span>Switch to Governance View</span>
+        </button>
+      )}
 
       {/* Logout button triggers modal */}
       <button

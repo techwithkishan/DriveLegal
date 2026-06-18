@@ -1,5 +1,4 @@
-import React from 'react';
-import { Home, ClipboardList, Bot, User, BookOpen, Map, Settings, RefreshCw } from 'lucide-react';
+import { Home, ClipboardList, Bot, User, BookOpen, Map, Settings, RefreshCw, Search, ShieldAlert, Users } from 'lucide-react';
 import { useAppState } from '../context/AppStateContext';
 
 export default function BottomNav() {
@@ -10,13 +9,22 @@ export default function BottomNav() {
 
   // Render Admin bottom nav or Citizen bottom nav
   const navItems = isAdminMode
-    ? [
-        { id: 'adminDashboard', label: 'Dashboard', icon: Home },
-        { id: 'adminZones', label: 'Zone Map', icon: Map },
-        { id: 'adminOffenders', label: 'Offenders', icon: RefreshCw },
-        { id: 'adminReports', label: 'Reports', icon: ClipboardList },
-        { id: 'adminMonitoring', label: 'Admin', icon: Settings },
-      ]
+    ? (user?.role === 'field'
+      ? [
+          { id: 'fieldOfficerDashboard', label: 'Live Zone', icon: ShieldAlert },
+          { id: 'adminVehicleLookup', label: 'Lookup', icon: Search },
+          { id: 'officerIssuanceLog', label: 'Log', icon: ClipboardList },
+          { id: 'officerWatchlist', label: 'Watchlist', icon: Users },
+          { id: 'adminDashboard', label: 'Analytics', icon: Home },
+        ]
+      : [
+          { id: 'adminDashboard', label: 'Dashboard', icon: Home },
+          { id: 'adminZones', label: 'Zone Map', icon: Map },
+          { id: 'adminOffenders', label: 'Offenders', icon: RefreshCw },
+          { id: 'adminVehicleLookup', label: 'Lookup', icon: Search },
+          { id: 'adminReports', label: 'Reports', icon: ClipboardList },
+          { id: 'adminMonitoring', label: 'Admin', icon: Settings },
+        ])
     : [
         { id: 'dashboard', label: 'Home', icon: Home },
         { id: 'history', label: 'Challans', icon: ClipboardList },
@@ -26,7 +34,11 @@ export default function BottomNav() {
       ];
 
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-2rem)] max-w-sm glass-panel px-4 py-2.5 shadow-2xl flex lg:hidden items-center justify-around gap-1">
+    <nav className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 w-[calc(100%-2rem)] max-w-sm px-4 py-2.5 shadow-2xl flex lg:hidden items-center justify-around gap-1 ${
+      (isAdminMode || user?.isAuthority) 
+        ? 'bg-[#16161a]/95 border border-purple-900/20 backdrop-blur-md rounded-2xl' 
+        : 'glass-panel'
+    }`}>
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeScreen === item.id;
@@ -45,15 +57,15 @@ export default function BottomNav() {
             {/* Active Glow Accent Background */}
             {isActive && (
               <span className={`absolute inset-0 border rounded-xl animate-fade-in ${
-                isAdminMode 
-                  ? 'bg-amber-500/10 border-amber-500/25 glow-amber' 
+                (isAdminMode || user?.isAuthority) 
+                  ? 'bg-purple-500/10 border-purple-500/20 shadow-purple-500/20' 
                   : 'bg-electric/10 border-electric/20 glow-electric'
               }`} />
             )}
 
             <Icon className={`w-5 h-5 relative z-10 transition-transform duration-300 ${
               isActive 
-                ? `scale-110 ${isAdminMode ? 'text-amber-500 animate-pulse' : 'text-electric'}` 
+                ? `scale-110 ${(isAdminMode || user?.isAuthority) ? 'text-purple-400' : 'text-electric'}` 
                 : 'scale-100'
             }`} />
             <span className="text-[9px] font-semibold tracking-wide relative z-10 mt-1 uppercase">
