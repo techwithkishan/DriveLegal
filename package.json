@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "firebase": "^12.15.0"
-=======
   "name": "drivelegal",
   "private": true,
   "version": "0.0.0",
@@ -14,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "firebase": "^10.12.0",
     "lucide-react": "^1.16.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
@@ -33,6 +30,5 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "vite": "^8.0.12"
->>>>>>> eacedbd3d0de9b04ea43b16a3fa8623455ba01ee
   }
 }
